@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a plugin example",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
