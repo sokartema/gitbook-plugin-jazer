@@ -1,27 +1,42 @@
-
-
 module.exports = {
 
-  website: {
-      assets: "./assets",
-      js: [
-          "example.js"
-      ],
-      css: [
-          "example.css"
-      ],
-      html: {
-          "body:start": function(options) {
-              return '<script src="'+options.staticBase+'/plugins/gitbook-plugin-exercises/jsrepl/jsrepl.js" id="jsrepl-script"></script>';
-          }
+  blocks: {
+
+    tag1: {
+
+      process: function(block){
+
+        return "Hello this is the block";
+
       }
+
+    }
+
+
   },
-  ebook: {
-      assets: "./assets",
-      css: [
-          "ebook.css"
-      ]
+  filters: {
+
+    fullName: function(firstName, lastName, kwargs){
+
+      var name = firstName + ' ' + lastName;
+
+      if (kwargs.man) name = "Mr" + name;
+      else name = "Mrs" + name;
+
+      return name;
+
+    }
+  },
+  book: {
+       assets: './assets',
+       css: [
+           'mystyle.css'
+       ],
+       js: [
+           'myfile.js'
+       ]
   }
+
 
 
 };

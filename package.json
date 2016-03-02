@@ -1,6 +1,6 @@
 {
-  "name": "@sokartema/gitbook-plugin-example",
-  "version": "0.0.1",
+  "name": "gitbook-plugin-jazer",
+  "version": "0.0.3",
   "description": "This is a plugin example for gitbook",
   "main": "index.js",
   "homepage": "https://github.com/sokartema/gitbook-plugin-example",
