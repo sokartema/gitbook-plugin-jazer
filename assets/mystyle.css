@@ -35,3 +35,15 @@
    margin-right: 20px;
 
 }
+
+.regexp #submit{
+
+  background-color: rgb(19, 143, 72);
+  width:20%;
+}
+
+.regexp #solution{
+
+  background-color: rgb(16, 115, 147);
+  width:20%;
+}
