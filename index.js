@@ -1,33 +1,13 @@
+var _ = require('lodash');
+var fs = require("fs");
+var path = require("path");
+
+var WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/website.html")));
+var EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/ebook.html")));
+
 module.exports = {
 
-  blocks: {
-
-    tag1: {
-
-      process: function(block){
-
-        return "Hello this is the block";
-
-      }
-
-    }
-
-
-  },
-  filters: {
-
-    fullName: function(firstName, lastName, kwargs){
-
-      var name = firstName + ' ' + lastName;
-
-      if (kwargs.man) name = "Mr" + name;
-      else name = "Mrs" + name;
-
-      return name;
-
-    }
-  },
-  book: {
+  website: {
        assets: './assets',
        css: [
            'mystyle.css'
@@ -35,6 +15,32 @@ module.exports = {
        js: [
            'myfile.js'
        ]
+  },
+  blocks: {
+
+    regexp: {
+
+      blocks: ["solution", "validation"],
+      process: function(blk) {
+
+          var codes = {};
+
+          _.each(blk.blocks, function(_blk) {
+              codes[_blk.name] = _blk.body.trim();
+          });
+
+          // Select appropriate template
+          var tpl = (this.generator === 'website' ? WEBSITE_TEMPLATE : EBOOK_TEMPLATE);
+
+          return tpl({
+              message: blk.body,
+              codes: codes
+          });
+      }
+
+    }
+
+
   }
 
 
