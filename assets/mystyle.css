@@ -9,7 +9,7 @@
 .regexp .header{
   background-color: rgb(223, 64, 4);
   padding: 5px;
-  color: rgb(233, 226, 236);
+  color: white;
   font-weight: bold;
 }
 
@@ -33,17 +33,18 @@
 
    border-radius: 8px;
    margin-right: 20px;
-
 }
 
 .regexp #submit{
 
   background-color: rgb(19, 143, 72);
-  width:20%;
+  width:30%;
+  color:white;
 }
 
 .regexp #solution{
 
   background-color: rgb(16, 115, 147);
-  width:20%;
+  width:30%;
+  color:white;
 }
