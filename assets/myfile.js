@@ -8,7 +8,7 @@ window.onload = function(){
   submit.addEventListener("click", function(){
 
     text = input.value;
-    console.log(text);
+    input.value = "";
 
   });
 
