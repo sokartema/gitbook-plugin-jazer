@@ -23,5 +23,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['exec:publish']);
   grunt.registerTask('publish', ['exec:publish']);
   grunt.registerTask('push', ['exec:push']);
+  grunt.registerTask('up', ['exec:publish', 'exec:push']);
 
 };
