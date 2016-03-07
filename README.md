@@ -1,4 +1,4 @@
-# Gitbook-Plugin-Jazer
+# Gitbook-Plugin-Jazer - REGEXP
 
 Este es un plugin de ejemplo para gitbook en el que se permite realizar diferentes ejercicios de regexp.
 
