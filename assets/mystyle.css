@@ -48,3 +48,31 @@
   width:30%;
   color:white;
 }
+
+.regexp #submit:hover{
+
+  background-color: rgb(47, 161, 96);
+  width:30%;
+  color:white;
+}
+
+.regexp #solution:hover{
+
+  background-color: rgb(34, 138, 172);
+  width:30%;
+  color:white;
+}
+
+.regexp #submit:active{
+
+  background-color: rgb(14, 108, 54);
+  width:30%;
+  color:white;
+}
+
+.regexp #solution:active{
+
+  background-color: rgb(9, 91, 117);
+  width:30%;
+  color:white;
+}
