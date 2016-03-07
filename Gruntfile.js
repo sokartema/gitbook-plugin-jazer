@@ -3,12 +3,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     exec: {
       publish: {
-        command: 'npm public --access=public',
+        command: 'npm publish --access=public',
         stdout: true,
         stderr: true
-      },
-      list_files: {
-        cmd: 'ls'
       },
       push: {
         cmd: function(msg) {
