@@ -20,10 +20,13 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', ['exec:publish']);
-  grunt.registerTask('publish', ['exec:publish']);
-  grunt.registerTask('push', ['exec:push']);
-  grunt.registerTask('up', function(msg){
+  grunt.registerTask('default','Version of grunt', function(){
+    grunt.log.write(grunt.version);
+
+  });
+  grunt.registerTask('publish','Publish proyect on npm', ['exec:publish']);
+  grunt.registerTask('push', 'Publish proyect on github', ['exec:push']);
+  grunt.registerTask('up','Publish proyect on github and npm', function(msg){
 
     grunt.task.run(['exec:publish','exec:push:'+msg]);
 
