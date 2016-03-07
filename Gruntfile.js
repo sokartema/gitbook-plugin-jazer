@@ -20,6 +20,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', ['exec:list_files']);
+  grunt.registerTask('default', ['exec:publish']);
 
 };
