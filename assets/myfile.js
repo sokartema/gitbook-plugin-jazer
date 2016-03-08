@@ -6,12 +6,13 @@ window.onload = function(){
   var solution = input.getAttribute('data-solution');
   var validation = input.getAttribute('data-validation');
   var text = "";
+  var regexp = new RegExp(validation, "i");
 
   submitB.addEventListener("click", function(){
 
     text = input.value;
     input.value = "";
-    if(validation.test(text)){
+    if(regexp.test(text)){
       console.log("Correcto!");
 
     }else{
