@@ -3,6 +3,8 @@ window.onload = function(){
   var submitB = document.getElementById("submit");
   var solutionB = document.getElementById("solution");
   var input = document.getElementById("respuesta");
+  var correct = document.getElementById("correct");
+  var fail = document.getElementById("fail");
   var solution = input.getAttribute('data-solution');
   var validation = input.getAttribute('data-validation');
   var text = "";
@@ -10,14 +12,17 @@ window.onload = function(){
 
   submitB.addEventListener("click", function(){
 
+    correct.classList.remove('show');
+    fail.classList.remove('show');
     text = input.value;
     input.value = "";
     if(regexp.test(text)){
-      console.log("Correcto!");
+
+      correct.classList.add('show');
 
     }else{
 
-      console.log("Incorrecto!");
+      fail.classList.add('show');
     }
 
   });
