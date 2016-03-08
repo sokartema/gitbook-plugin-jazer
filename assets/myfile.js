@@ -11,7 +11,7 @@ window.onload = function(){
 
     text = input.value;
     input.value = "";
-    if(solution.match(validation)){
+    if(validation.test(text)){
       console.log("Correcto!");
 
     }else{
