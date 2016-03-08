@@ -1,20 +1,30 @@
 window.onload = function(){
 
-  var submit = document.getElementById("submit");
-  var solution = document.getElementById("solution");
+  var submitB = document.getElementById("submit");
+  var solutionB = document.getElementById("solution");
   var input = document.getElementById("respuesta");
+  var solution = input.getAttribute('data-solution');
+  var validation = input.getAttribute('data-validation');
   var text = "";
 
-  submit.addEventListener("click", function(){
+  submitB.addEventListener("click", function(){
 
     text = input.value;
     input.value = "";
+    if(solution.match(validation)){
+      console.log("Correcto!");
+
+    }else{
+
+      console.log("Incorrecto!");
+    }
 
   });
 
-  solution.addEventListener("click", function(){
+  solutionB.addEventListener("click", function(){
 
-    console.log("Solution");
+    input.value = solution;
+
   });
 
 
