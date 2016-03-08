@@ -15,7 +15,6 @@ window.onload = function(){
     correct.classList.remove('show');
     fail.classList.remove('show');
     text = input.value;
-    input.value = "";
     if(regexp.test(text)){
 
       correct.classList.add('show');

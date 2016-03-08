@@ -93,7 +93,7 @@
 
 .regexp #fail{
 
-  border
+  border-radius: 8px;
   color: white;
   width: 35%;
   padding-left:5px;
