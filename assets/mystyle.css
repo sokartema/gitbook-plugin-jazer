@@ -3,6 +3,8 @@
   margin:20px;
   border: medium solid rgb(223, 64, 4);
   width: 300px;
+  background-color: white;
+  color:black;
 
 }
 
@@ -19,7 +21,7 @@
 
 }
 
-.regexp #respuesta{
+.regexp .respuesta{
 
   margin: 10px;
   border-radius: 3px;
@@ -35,7 +37,7 @@
    margin-right: 20px;
 }
 
-.regexp #submit{
+.regexp .submit{
 
   background-color: rgb(19, 143, 72);
   width:30%;
@@ -43,7 +45,7 @@
   border:none;
 }
 
-.regexp #solution{
+.regexp .solution{
 
   background-color: rgb(16, 115, 147);
   width:30%;
@@ -51,35 +53,35 @@
   border:none;
 }
 
-.regexp #submit:hover{
+.regexp .submit:hover{
 
   background-color: rgb(47, 161, 96);
   width:30%;
   color:white;
 }
 
-.regexp #solution:hover{
+.regexp .solution:hover{
 
   background-color: rgb(34, 138, 172);
   width:30%;
   color:white;
 }
 
-.regexp #submit:active{
+.regexp .submit:active{
 
   background-color: rgb(14, 108, 54);
   width:30%;
   color:white;
 }
 
-.regexp #solution:active{
+.regexp .solution:active{
 
   background-color: rgb(9, 91, 117);
   width:30%;
   color:white;
 }
 
-.regexp #correct{
+.regexp .correct{
   border-radius: 8px;
   color: white;
   width: 35%;
@@ -91,7 +93,7 @@
 
 }
 
-.regexp #fail{
+.regexp .fail{
 
   border-radius: 8px;
   color: white;
@@ -104,13 +106,13 @@
 
 }
 
-.regexp #correct.show{
+.regexp .correct.show{
   height: 100%;
   opacity: 1;
   transition: all 1s ease-in;
 }
 
-.regexp #fail.show{
+.regexp .fail.show{
   height: 100%;
   opacity: 1;
   transition: all 1s ease-in;

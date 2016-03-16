@@ -1,36 +1,51 @@
-window.onload = function(){
+require(["gitbook"],function(gitbook){
 
-  var submitB = document.getElementById("submit");
-  var solutionB = document.getElementById("solution");
-  var input = document.getElementById("respuesta");
-  var correct = document.getElementById("correct");
-  var fail = document.getElementById("fail");
-  var solution = input.getAttribute('data-solution');
-  var validation = input.getAttribute('data-validation');
-  var text = "";
-  var regexp = new RegExp(validation, "i");
+  var prepareExercise = function($regexp) {
+      console.log($regexp);
+      var codeSolution = $regexp.find(".respuesta").attr('data-solution');
+      var codeValidation = $regexp.find(".respuesta").attr('data-validation');
+      var correct = $regexp.find(".correct");
+      var fail = $regexp.find(".fail");
+      var regexp = new RegExp(codeValidation, "i");
 
-  submitB.addEventListener("click", function(){
+      // Submit: test code
+      $regexp.find(".submit").click(function(e) {
+          e.preventDefault();
+          var textSolution = $regexp.find(".respuesta").val();
 
-    correct.classList.remove('show');
-    fail.classList.remove('show');
-    text = input.value;
-    if(regexp.test(text)){
+          correct.removeClass('show');
+          fail.removeClass('show');
 
-      correct.classList.add('show');
+          if(regexp.test(textSolution)){
 
-    }else{
+            correct.addClass('show');
 
-      fail.classList.add('show');
-    }
+          }else{
 
+            fail.addClass('show');
+          }
+
+      });
+
+      // Set solution
+      $regexp.find(".solution").click(function(e) {
+          e.preventDefault();
+
+        $regexp.find(".respuesta").val(codeSolution);
+      });
+  };
+
+  // Prepare all regexps
+  var init = function() {
+      gitbook.state.$book.find(".regexp").each(function() {
+          prepareExercise($(this));
+      });
+  };
+
+  gitbook.events.bind("page.change", function() {
+      init();
   });
 
-  solutionB.addEventListener("click", function(){
-
-    input.value = solution;
-
-  });
 
 
-};
+});

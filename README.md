@@ -10,7 +10,7 @@ Este es un plugin de ejemplo para gitbook en el que se permite realizar diferent
 {% solution %}
 Cristobal Colon
 {% validation %}
-\s*Cristobal Colon\s*
+/\s*Cristobal Colon\s*/
 {% endregexp %}
 
 ```
