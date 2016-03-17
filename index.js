@@ -13,7 +13,8 @@ module.exports = {
            'mystyle.css'
        ],
        js: [
-           'myfile.js'
+           'myfile.js',
+           'xregexp/xregexp.js'
        ]
   },
   blocks: {
