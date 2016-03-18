@@ -2,11 +2,12 @@
 
 ## Warning! This is a test version. 
 
-The true version for this gitbook plugin is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer)
+The main/true version for this gitbook plugin is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer). This branch is only for testing and development.
 
 ## Que es
 
-Este es un plugin de ejemplo para gitbook en el que se permite realizar 
+Este es un plugin de ejemplo para [gitbook](https://www.gitbook.com) 
+en el que se permite realizar 
 ejercicios cuya respuesta se valida mediante una expresión regular 
 (Usando [XRegExp](http://xregexp.com/))
 
@@ -18,7 +19,7 @@ plugin to the `book.json` file, then install plugins using `gitbook install`.
 
 ````json
 {
-    "plugins": ["exercises"]
+    "plugins": ["jazer2"]
 }
 ```
 ## Ejemplo Simple
