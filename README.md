@@ -18,7 +18,7 @@ ejercicios cuya respuesta se valida mediante una expresión regular
 {% solution %}
 Cristobal Colon
 {% validation %}
-/\s*Cristobal Colon\s*/
+/\s*(Crist[oó]bal\s+)?Col[oó]n\s*/i
 {% endregexp %}
 ```
 ## Ejemplo con [XRegExp](http://xregexp.com/):
