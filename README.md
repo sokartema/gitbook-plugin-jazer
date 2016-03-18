@@ -1,11 +1,16 @@
 # Gitbook-Plugin-Jazer - REGEXP
 
-## Warning! This is a test version. The true version is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer)
+## Warning! This is a test version. 
+
+The true version for this gitbook plugin is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer)
+
+## Que es
+
 Este es un plugin de ejemplo para gitbook en el que se permite realizar 
 ejercicios cuya respuesta se valida mediante una expresión regular 
 (Usando [XRegExp](http://xregexp.com/))
 
-## Ejemplo
+## Ejemplo Simple
 
 ```
 {% regexp %}
@@ -16,6 +21,8 @@ Cristobal Colon
 /\s*Cristobal Colon\s*/
 {% endregexp %}
 ```
+## Ejemplo con [XRegExp](http://xregexp.com/):
+
 Es posible usar [XRegExp](http://xregexp.com/):
 
 ```
@@ -35,5 +42,7 @@ Los Reyes Católicos
 /ix
 {% endregexp %}
 ```
+## Errores en la XRegExp
+
 En el caso de que la [XRegExp](http://xregexp.com/) contenga errores
 se abre una ventana de alerta.
