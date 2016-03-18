@@ -10,6 +10,17 @@ Este es un plugin de ejemplo para gitbook en el que se permite realizar
 ejercicios cuya respuesta se valida mediante una expresión regular 
 (Usando [XRegExp](http://xregexp.com/))
 
+## Install
+
+
+To use the `jazer2` plugin in your Gitbook project, add the `jazer2` 
+plugin to the `book.json` file, then install plugins using `gitbook install`.
+
+````json
+{
+    "plugins": ["exercises"]
+}
+```
 ## Ejemplo Simple
 
 ```
