@@ -4,6 +4,8 @@
 
 The main/true version for this gitbook plugin is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer). This branch is only for testing and development.
 
+This is work in development. Use it at your own risk.
+
 ## Que es
 
 Este es un plugin de ejemplo para [gitbook](https://www.gitbook.com) 
@@ -17,16 +19,17 @@ ejercicios cuya respuesta se valida mediante una expresión regular
 To use the `jazer2` plugin in your Gitbook project, add the `jazer2` 
 plugin to the `book.json` file, then install plugins using `gitbook install`.
 
-````json
+```json
 {
     "plugins": ["jazer2"]
 }
 ```
+
 ## Ejemplo Simple
 
 ```
 {% regexp %}
-¿Quien descubrió america?
+¿Quien descubrió America?
 {% solution %}
 Cristobal Colon
 {% validation %}
