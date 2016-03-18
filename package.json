@@ -1,7 +1,7 @@
 {
   "name": "gitbook-plugin-jazer2",
-  "version": "1.0.1",
-  "description": "This is a plugin example for gitbook",
+  "version": "1.0.3",
+  "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "main": "index.js",
   "homepage": "ihttps://github.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer.git",
   "bugs": {
