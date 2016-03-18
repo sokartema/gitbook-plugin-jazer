@@ -1,5 +1,6 @@
 # Gitbook-Plugin-Jazer - REGEXP
 
+## Warning! This is a test version. The true version is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer)
 Este es un plugin de ejemplo para gitbook en el que se permite realizar 
 ejercicios cuya respuesta se valida mediante una expresión regular 
 (Usando [XRegExp](http://xregexp.com/))
