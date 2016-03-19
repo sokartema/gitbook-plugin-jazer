@@ -114,6 +114,7 @@
 
 .regexp .fail.show{
   height: 100%;
+  width: 50%;
   opacity: 1;
   transition: all 1s ease-in;
 }
