@@ -40,7 +40,10 @@ require(["gitbook"],function(gitbook){
 
       // Set solution
       $regexp.find(".solution").click(function(e) {
-          e.preventDefault();
+        e.preventDefault();
+
+        correct.removeClass('show');
+        fail.removeClass('show');
 
         $regexp.find(".respuesta").val(codeSolution);
       });
