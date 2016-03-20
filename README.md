@@ -79,3 +79,6 @@ Los Reyes Católicos
 /ix
 {% endregexp %}
 ```
+
+Al ser procesado el plugin emite un `alert`con el mensaje de error:
+![error message: bad regexp](assets/regexpwitherror.png)
