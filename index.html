@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gitbook-plugin-jazer by sokartema</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Gitbook-plugin-jazer</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/sokartema/gitbook-plugin-jazer" class="btn">View on GitHub</a>
+      <a href="https://github.com/sokartema/gitbook-plugin-jazer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/sokartema/gitbook-plugin-jazer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="gitbook-plugin-jazer---regexp" class="anchor" href="#gitbook-plugin-jazer---regexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gitbook-Plugin-Jazer - REGEXP</h1>
+
+<h2>
+<a id="warning-this-is-a-test-version" class="anchor" href="#warning-this-is-a-test-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Warning! This is a test version.</h2>
+
+<p>This is work in development. Use it at your own risk.</p>
+
+<h2>
+<a id="que-es" class="anchor" href="#que-es" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Que es</h2>
+
+<p>Este es un plugin de ejemplo para <a href="https://www.gitbook.com">gitbook</a>
+en el que se permite realizar
+ejercicios cuya respuesta se valida mediante una expresión regular
+(Usando <a href="http://xregexp.com/">XRegExp</a>)</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<p>To use the <code>jazer</code> plugin in your Gitbook project, add the <code>jazer</code>
+plugin to the <code>book.json</code> file, then install plugins using <code>gitbook install</code>.</p>
+
+<div class="highlight highlight-source-json"><pre>{
+    <span class="pl-s"><span class="pl-pds">"</span>plugins<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>jazer<span class="pl-pds">"</span></span>]
+}</pre></div>
+
+<h2>
+<a id="ejemplo-simple" class="anchor" href="#ejemplo-simple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ejemplo Simple</h2>
+
+<pre><code>{% regexp %}
+¿Quien descubrió America?
+{% solution %}
+Cristobal Colon
+{% validation %}
+/\s*(Crist[oó]bal\s+)?Col[oó]n\s*/i
+{% endregexp %}
+</code></pre>
+
+<h2>
+<a id="ejemplo-con-xregexp" class="anchor" href="#ejemplo-con-xregexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ejemplo con <a href="http://xregexp.com/">XRegExp</a>:</h2>
+
+<p>Es posible usar <a href="http://xregexp.com/">XRegExp</a>:</p>
+
+<pre><code>{% regexp %}
+¿Quienes reinaban en España cuando se descubrió America?
+{% solution %}
+Los Reyes Católicos
+{% validation %}
+/
+  (Isabel\s+                    # nombre sencillo
+  ((I\s+)?de\s+Castilla\s+)?    # titulo de Isabel
+  y
+  \s+Fernando                   # nombre sencillo
+  (\s+(II\s+)?de\s+Arag[oó]n)?) # titulo de Fernando
+|
+  (Reyes\s+Cat[oó]licos)  # conocidos también por este nombre
+/ix
+{% endregexp %}
+</code></pre>
+
+<h2>
+<a id="errores-en-la-xregexp" class="anchor" href="#errores-en-la-xregexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Errores en la XRegExp</h2>
+
+<p>En el caso de que la <a href="http://xregexp.com/">XRegExp</a> contenga errores
+se abre una ventana de alerta.</p>
+
+<p>En la siguiente expresión regular el paréntesis abrir no tiene matching paréntesis cerrar:</p>
+
+<div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> regexp <span class="pl-k">%</span>}
+¿Quienes reinaban en España cuando se descubrió America<span class="pl-k">?</span>
+{<span class="pl-k">%</span> solution <span class="pl-k">%</span>}
+Los Reyes Católicos
+{<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
+<span class="pl-k">/</span>
+  (Isabel\s<span class="pl-k">+</span>                    # paréntesis abrir
+  y
+  \s<span class="pl-k">+</span>Fernando                   # sin
+<span class="pl-k">|</span>
+  Reyes\s<span class="pl-k">+</span>Cat[oó]licos          # paréntesis cerrar
+<span class="pl-k">/</span>ix
+{<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
+
+<p>Al ser procesado el plugin emite un <code>alert</code> con el mensaje de error:
+<img src="https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png" alt="error message: bad regexp"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/sokartema/gitbook-plugin-jazer">Gitbook-plugin-jazer</a> is maintained by <a href="https://github.com/sokartema">sokartema</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
