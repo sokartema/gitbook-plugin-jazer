@@ -2,8 +2,6 @@
 
 ## Warning! This is a test version.
 
-The main/true version for this gitbook plugin is in [gitbook-plugin-jazer](https://www.npmjs.com/package/gitbook-plugin-jazer). This branch is only for testing and development.
-
 This is work in development. Use it at your own risk.
 
 ## Que es
