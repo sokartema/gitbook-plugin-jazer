@@ -7,9 +7,17 @@ require(["gitbook"],function(gitbook){
       var correct = $regexp.find(".correct");
       var fail = $regexp.find(".fail");
 
-      var flags = codeValidation.replace(/.*\/([gimy]*)$/, '$1');
-      var pattern = codeValidation.replace(new RegExp('^/(.*?)/'+flags+'$'), '$1');
-      var regex = XRegExp(pattern,flags);
+        try {
+          var match = codeValidation.match(/^\/((?:.|\n)*)\/([sxgimy]*)$/);
+          var pattern = match[1]; 
+          var flags = match[2];
+          var regex;
+          regex = XRegExp(pattern,flags);
+        }
+        catch(e) {
+          alert('Error!. Bad Regular expression: /'+pattern+'/ '+e);
+          regexp = XRegExp(/.*/);
+        }
 
       // Submit: test code
       $regexp.find(".submit").click(function(e) {
@@ -32,7 +40,10 @@ require(["gitbook"],function(gitbook){
 
       // Set solution
       $regexp.find(".solution").click(function(e) {
-          e.preventDefault();
+        e.preventDefault();
+
+        correct.removeClass('show');
+        fail.removeClass('show');
 
         $regexp.find(".respuesta").val(codeSolution);
       });
