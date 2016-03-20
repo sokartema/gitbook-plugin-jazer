@@ -18,7 +18,7 @@
   "author": {
     "name": "Jazer Abreu"
   },
-  "contributors": [ { "name": "Casiano", email: "crguezl@ull.edu.es"} ],
+  "contributors": [ { "name": "Casiano", "email": "crguezl@ull.edu.es"} ],
   "license": "GPL-3.0",
   "engines": {
     "gitbook": ">=2.0.0"
