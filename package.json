@@ -1,9 +1,9 @@
 {
   "name": "gitbook-plugin-jazer",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "main": "index.js",
-  "homepage": "https://github.com/sokartema/gitbook-plugin-jazer",
+  "homepage": "http://sokartema.github.io/gitbook-plugin-jazer",
   "bugs": {
     "url": "https://github.com/sokartema/gitbook-plugin-example/issues",
     "email": "sokartema@gmail.com"
