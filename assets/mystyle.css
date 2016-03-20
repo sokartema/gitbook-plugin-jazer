@@ -21,6 +21,10 @@
 
 }
 
+input.respuesta {
+  width: 80%;
+}
+
 .regexp .respuesta{
 
   margin: 10px;

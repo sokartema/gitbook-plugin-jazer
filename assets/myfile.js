@@ -7,11 +7,11 @@ require(["gitbook"],function(gitbook){
       var correct = $regexp.find(".correct");
       var fail = $regexp.find(".fail");
 
-      var match = codeValidation.match(/^\/((?:.|\n)*)\/([sxgimy]*)$/);
-      var pattern = match[1]; 
-      var flags = match[2];
-      var regex;
         try {
+          var match = codeValidation.match(/^\/((?:.|\n)*)\/([sxgimy]*)$/);
+          var pattern = match[1]; 
+          var flags = match[2];
+          var regex;
           regex = XRegExp(pattern,flags);
         }
         catch(e) {
