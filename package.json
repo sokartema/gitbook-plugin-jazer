@@ -1,9 +1,9 @@
 {
-  "name": "gitbook-plugin-jazer",
-  "version": "0.1.2",
-  "description": "This is a plugin example for gitbook",
+  "name": "gitbook-plugin-jazer2",
+  "version": "1.0.26",
+  "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "main": "index.js",
-  "homepage": "https://github.com/sokartema/gitbook-plugin-example",
+  "homepage": "https://github.com/sokartema/gitbook-plugin-jazer/tree/casiano",
   "bugs": {
     "url": "https://github.com/sokartema/gitbook-plugin-example/issues",
     "email": "sokartema@gmail.com"
@@ -13,10 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sokartema/gitbook-plugin-example"
+    "url": "git+https://github.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer.git"
   },
-  "author": "Jazer Abreu",
-  "license": "ISC",
+  "author": {
+    "name": "Jazer Abreu"
+  },
+  "contributors": [ { "name": "Casiano", "email": "crguezl@ull.edu.es"} ],
+  "license": "GPL-3.0",
   "engines": {
     "gitbook": ">=2.0.0"
   },
