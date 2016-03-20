@@ -80,5 +80,6 @@ Los Reyes Católicos
 {% endregexp %}
 ```
 
-Al ser procesado el plugin emite un `alert`con el mensaje de error:
-![error message: bad regexp](assets/regexpwitherror.png)
+Al ser procesado el plugin emite un `alert` con el mensaje de error:
+![error message: bad regexp](https://raw.githubusercontent.com/sokartema/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png)
+
