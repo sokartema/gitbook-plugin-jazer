@@ -10,11 +10,13 @@ module.exports = {
   website: {
        assets: './assets',
        css: [
-           'mystyle.css'
+           'regexp.css'
        ],
        js: [
-           'myfile.js',
-           'xregexp/xregexp.js'
+           'regexp.js',
+           'xregexp/xregexp.js',
+           "ace/ace.js",
+           "ace/theme-dreamweaver.js"
        ]
   },
   blocks: {
