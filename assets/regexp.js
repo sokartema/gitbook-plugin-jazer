@@ -8,6 +8,7 @@ require(["gitbook"],function(gitbook){
       var fail = $regexp.find(".fail");
       var editor = ace.edit($regexp.find(".editor").get(0));
       editor.setTheme("ace/theme/dreamweaver");
+      editor.renderer.setShowGutter(false);
 
         try {
           var match = codeValidation.match(/^\/((?:.|\n)*)\/([sxgimy]*)$/);
