@@ -21,14 +21,12 @@
 
 }
 
-input.respuesta {
-  width: 80%;
-}
-
-.regexp .respuesta{
+.regexp .editor{
 
   margin: 10px;
   border-radius: 3px;
+  width: 80%;
+  height: 100px;
 }
 
 .regexp .buttons{
