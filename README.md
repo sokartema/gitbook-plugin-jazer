@@ -16,12 +16,12 @@ ejercicios cuya respuesta se valida mediante una expresión regular
 ## Install
 
 
-To use the `jazer` plugin in your Gitbook project, add the `jazer`
+To use the `jazer2` plugin in your Gitbook project, add the `jazer2` 
 plugin to the `book.json` file, then install plugins using `gitbook install`.
 
 ```json
 {
-    "plugins": ["jazer"]
+    "plugins": ["jazer2"]
 }
 ```
 

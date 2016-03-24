@@ -1,9 +1,9 @@
 {
-  "name": "gitbook-plugin-jazer",
-  "version": "1.0.29",
+  "name": "gitbook-plugin-jazer2",
+  "version": "1.0.26",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "main": "index.js",
-  "homepage": "http://sokartema.github.io/gitbook-plugin-jazer",
+  "homepage": "https://github.com/sokartema/gitbook-plugin-jazer/tree/casiano",
   "bugs": {
     "url": "https://github.com/sokartema/gitbook-plugin-example/issues",
     "email": "sokartema@gmail.com"
