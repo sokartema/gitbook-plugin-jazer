@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-jazer2",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "main": "index.js",
   "homepage": "https://github.com/sokartema/gitbook-plugin-jazer/tree/casiano",
