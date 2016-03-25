@@ -3,7 +3,8 @@
 * See the deployment of this example at [gh-pages](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/).
 * [Repo gitbook-plugin-jazer at GitHub](https://github.com/sokartema/gitbook-plugin-jazer/tree/casiano) (Branch `casiano`)
 * [Repo pages at github.io](http://sokartema.github.io/gitbook-plugin-jazer)
-* [npm module](https://www.npmjs.com/package/gitbook-plugin-jazer)
+* [npm module](https://www.npmjs.com/package/gitbook-plugin-jazer) (jazer)
+* [npm module](https://www.npmjs.com/package/gitbook-plugin-jazer2) (jazer2)
 
 ```
 {% regexp %}
