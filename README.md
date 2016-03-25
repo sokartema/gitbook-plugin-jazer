@@ -88,4 +88,4 @@ Al ser procesado el plugin emite un `alert` con el mensaje de error:
 
 ## See Also
 
-[Jazer examples](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/)
+[gitbook-plugin-jazer examples](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/)
