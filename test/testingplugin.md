@@ -10,7 +10,10 @@ In the plugin's folder, run:
 $ npm link
 ```
 
-The in your book's folder:
+`npm  link` iniside a package folder will create a globally-installed symbolic link
+from `prefix/package-name` to the current folder 
+
+Then in your book's folder:
 
 ```
 $ npm link gitbook-plugin-<plugin's name>
