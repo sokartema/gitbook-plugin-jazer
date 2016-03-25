@@ -57,6 +57,9 @@ Los Reyes Católicos
 /ix
 {% endregexp %}
 ```
+
+See this example working at [gh-pages](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/).
+
 ## Errores en la XRegExp
 
 En el caso de que la [XRegExp](http://xregexp.com/) contenga errores
