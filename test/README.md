@@ -1,6 +1,7 @@
 # Probando `jazer` plugin
 
-See the deployment at [gh-pages](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/).
+See the deployment of this example 
+at [gh-pages](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/).
 
 
 ```
