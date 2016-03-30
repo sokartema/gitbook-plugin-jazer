@@ -5,9 +5,6 @@
 gitbook-plugin-jazer)
 [![devDependencies](https://david-dm.org/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/dev-status.svg)](https://david-dm.org/ULL-ESI
 T-GRADOII-TFG/gitbook-plugin-jazer#info=devDependencies)
-![node](https://img.shields.io/node/v/gitbook-plugin-jazer.svg)
-
-[Pagina Principal](http://sokartema.github.io/gitbook-plugin-jazer)
 
 ## Warning! This is a test version.
 
