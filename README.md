@@ -1,5 +1,7 @@
 # Gitbook-Plugin-Jazer - REGEXP
 
+[![NPM](https://nodei.co/npm/gitbook-plugin-jazer.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gitbook-plugin-jazer/)
+
 [Pagina Principal](http://sokartema.github.io/gitbook-plugin-jazer)
 
 ## Warning! This is a test version.
