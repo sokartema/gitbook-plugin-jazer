@@ -1,6 +1,6 @@
 # Gitbook-Plugin-Jazer - REGEXP
 
-[Pagina Principal](http://sokartema.github.io/gitbook-plugin-jazer)
+[![version](https://img.shields.io/npm/v/gitbook-plugin-jazer.svg)](https://www.npmjs.org/package/gitbook-plugin-jazer)
 
 ## Warning! This is a test version.
 
@@ -16,12 +16,12 @@ ejercicios cuya respuesta se valida mediante una expresión regular
 ## Install
 
 
-To use the `jazer2` plugin in your Gitbook project, add the `jazer2` 
+To use the `jazer` plugin in your Gitbook project, add the `jazer`
 plugin to the `book.json` file, then install plugins using `gitbook install`.
 
 ```json
 {
-    "plugins": ["jazer2"]
+    "plugins": ["jazer"]
 }
 ```
 
@@ -88,4 +88,5 @@ Al ser procesado el plugin emite un `alert` con el mensaje de error:
 
 ## See Also
 
-[gitbook-plugin-jazer examples](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/)
+* [gitbook-plugin-jazer examples](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/)
+* [Pagina Principal](http://sokartema.github.io/gitbook-plugin-jazer)
