@@ -57,9 +57,6 @@ Los Reyes Católicos
 /ix
 {% endregexp %}
 ```
-
-See this example working at [gh-pages](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/).
-
 ## Errores en la XRegExp
 
 En el caso de que la [XRegExp](http://xregexp.com/) contenga errores
@@ -85,8 +82,3 @@ Los Reyes Católicos
 
 Al ser procesado el plugin emite un `alert` con el mensaje de error:
 ![error message: bad regexp](https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png)
-
-## See Also
-
-* [gitbook-plugin-jazer examples](http://ull-esit-gradoii-tfg.github.io/regexp-gbp/)
-* [Pagina Principal](http://sokartema.github.io/gitbook-plugin-jazer)
