@@ -1,6 +1,6 @@
 {
-    "plugins": [ "jazer2" ],
+    "plugins": [ "jazer" ],
     "pluginsConfig" : {
-      "jazer2": { "color" : "blue" }
+      "jazer": { "color" : "blue" }
     }
 }
