@@ -3,3 +3,4 @@
 node_modules
 npm-debug.log
 assets/myfilecas.js
+test/book.pdf
