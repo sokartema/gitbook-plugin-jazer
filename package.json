@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-jazer",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "main": "index.js",
   "homepage": "http://sokartema.github.io/gitbook-plugin-jazer",

@@ -1,6 +1,11 @@
 # Gitbook-Plugin-Jazer - REGEXP
 
-[![NPM](https://nodei.co/npm/gitbook-plugin-jazer.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/gitbook-plugin-jazer/)
+[![version](https://img.shields.io/npm/v/gitbook-plugin-jazer.svg)](https://www.npmjs.org/package/gitbook-plugin-jazer)
+[![dependencies](https://david-dm.org/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer.svg)](https://david-dm.org/ULL-ESIT-GRADOII-TFG/
+gitbook-plugin-jazer)
+[![devDependencies](https://david-dm.org/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/dev-status.svg)](https://david-dm.org/ULL-ESI
+T-GRADOII-TFG/gitbook-plugin-jazer#info=devDependencies)
+![node](https://img.shields.io/node/v/gitbook-plugin-jazer.svg)
 
 [Pagina Principal](http://sokartema.github.io/gitbook-plugin-jazer)
 
