@@ -1,0 +1,29 @@
+.regexp{
+
+  margin:20px;
+  border: medium solid rgb(223, 64, 4);
+  //width: 300px;
+  background-color: white;
+  color:black;
+
+}
+
+.regexp .header{
+  background-color: rgb(223, 64, 4);
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.regexp .message{
+  padding:5px;
+  font-weight: bold;
+
+}
+
+.regexp .respuesta{
+
+  margin: 10px;
+  border-radius: 3px;
+  width: 80%;
+}

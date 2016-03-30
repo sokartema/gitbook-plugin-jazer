@@ -5,19 +5,27 @@ var path = require("path");
 var WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/website.html")));
 var EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/ebook.html")));
 
+
 module.exports = {
 
   website: {
-       assets: './assets',
-       css: [
-           'regexp.css'
-       ],
-       js: [
-           'regexp.js',
-           'xregexp/xregexp.js',
-           "ace/ace.js",
-           "ace/theme-dreamweaver.js"
-       ]
+    assets: './assets',
+    css: [
+      'regexp.css'
+    ],
+    js: [
+      'regexp.js',
+      'xregexp/xregexp.js',
+      "ace/ace.js",
+      "ace/theme-dreamweaver.js"
+    ]
+  },
+  ebook: {
+    assets: './assets',
+    css: [
+      'regexpebook.css'
+    ]
+
   },
   blocks: {
 
@@ -45,7 +53,5 @@ module.exports = {
 
 
   }
-
-
 
 };
