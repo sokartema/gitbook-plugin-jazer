@@ -24,8 +24,7 @@ Los Reyes Católicos
 {% endregexp %}
 ```
 
-
-{% regexp %}
+{% regexp width="80%", height="60%" %}
 ¿Quienes reinaban en España cuando se descubrió America?
 {% solution %}
 Los Reyes Católicos
