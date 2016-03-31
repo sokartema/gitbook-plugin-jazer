@@ -14,18 +14,27 @@ module.exports = function(grunt) {
         },
         stdout: true,
         stderr: true
-      }
+      },
+      testregexp: {
+        command: 'cd test && gitbook install && gitbook serve',
+        stdout: true,
+        stderr: true
+     },
+      getbook: {
+        command: 'git submodule init && git submodule update',
+        stdout: true,
+        stderr: true
+     }
     }
   });
 
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default','Version of grunt', function(){
-    grunt.log.write(grunt.version);
-
-  });
+  grunt.registerTask('default', ['test']); 
   grunt.registerTask('publish','Publish proyect on npm', ['exec:publish']);
   grunt.registerTask('push', 'Publish proyect on github', ['exec:push']);
+  grunt.registerTask('test', 'Open book example in test', ['exec:testregexp']);
+  grunt.registerTask('getbook', 'Get book example in test', ['exec:getbook']);
   grunt.registerTask('up','Publish proyect on github and npm', function(msg){
 
     grunt.task.run(['exec:publish','exec:push:'+msg]);

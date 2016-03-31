@@ -1,0 +1,6 @@
+{
+    "plugins": [ "jazer" ],
+    "pluginsConfig" : {
+      "jazer": { "color" : "blue" }
+    }
+}
