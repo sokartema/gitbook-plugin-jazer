@@ -8,8 +8,8 @@ require(["gitbook"],function(gitbook){
       var fail = $questionjs.find(".fail");
       var editor = ace.edit($questionjs.find(".editor").get(0));
       editor.setTheme("ace/theme/dreamweaver");
-      
-      if($regexp.find(".editor").attr('data-gutter')){
+
+      if($questionjs.find(".editor").attr('data-gutter')){
         editor.renderer.setShowGutter(true);
       }else{
         editor.renderer.setShowGutter(false);
