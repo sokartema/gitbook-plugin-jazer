@@ -6,12 +6,13 @@
 
 This is work in development. Use it at your own risk.
 
-## Que es
+## What is this
 
-Este es un plugin de ejemplo para [gitbook](https://www.gitbook.com)
-en el que se permite realizar
-ejercicios cuya respuesta se valida mediante una expresión regular
-(Usando [XRegExp](http://xregexp.com/))
+This is a plugin example for [gitbook](https://www.gitbook.com)
+and allow you to create exercises and validate the answer with a regular expresion
+(Using [XRegExp](http://xregexp.com/))
+
+You can create also exercises and validate the answer with a javascript function
 
 ## Install
 
@@ -25,7 +26,7 @@ plugin to the `book.json` file, then install plugins using `gitbook install`.
 }
 ```
 
-## Ejemplo Simple
+## Simple example
 
 ```
 {% regexp %}
@@ -36,9 +37,9 @@ Cristobal Colon
 /\s*(Crist[oó]bal\s+)?Col[oó]n\s*/i
 {% endregexp %}
 ```
-## Ejemplo con [XRegExp](http://xregexp.com/):
+## Example [XRegExp](http://xregexp.com/):
 
-Es posible usar [XRegExp](http://xregexp.com/):
+You can use [XRegExp](http://xregexp.com/):
 
 ```
 {% regexp %}
@@ -57,6 +58,33 @@ Los Reyes Católicos
 /ix
 {% endregexp %}
 ```
+
+## Example questionjs
+
+```
+{% questionjs  width="30%", height="10%", color="#BB504B"%}
+¿Quienes reinaban en España cuando se descubrió America?
+{% solution %}
+reyes catolicos
+{% validation %}
+function(respuesta) {
+  if (respuesta.match(/reyes\s+catolicos/i)) return true;
+  if (respuesta.match(/isabel/i && respuesta.match(/fernando/i) )) return true;
+}
+{% endquestionjs %}
+```
+
+##Parameters
+
+You can specify four parameters at the moment: width, height, color and show or not gutter for the editor for each exercise.
+
+```
+{% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
+
+```
+the width and height must be a percentage, color can be a value of css and gutter true or false.
+
+
 ## Errores en la XRegExp
 
 En el caso de que la [XRegExp](http://xregexp.com/) contenga errores
@@ -80,5 +108,8 @@ Los Reyes Católicos
 {% endregexp %}
 ```
 
+
 Al ser procesado el plugin emite un `alert` con el mensaje de error:
 ![error message: bad regexp](https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png)
+
+En el caso de questionjs si la funcion está mal definida tambien saldrá una ventana de alerta con el error de la funcion

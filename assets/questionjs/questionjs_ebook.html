@@ -1,0 +1,7 @@
+<div class="questionjs" style="<% if (config.width){ print("width: "+ config.width +";"); }%> <% if (config.height){ print("height: "+ config.height +";"); }%> <% if (config.color){ print("border: medium solid  "+ config.color +";"); }%>">
+	<div class="header" style="<% if (config.color){ print("background-color: "+ config.color +";"); }%>">QuestionJS</div>
+	<div class="message">
+		<%= message %>
+	</div>
+	<input class ="respuesta" type= "text" value = "<%= codes.solution %>">
+</div>

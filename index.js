@@ -2,8 +2,11 @@ var _ = require('lodash');
 var fs = require("fs");
 var path = require("path");
 
-var WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/website.html")));
-var EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/ebook.html")));
+var REGEXP_WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/regexp/regexp_website.html")));
+var REGEXP_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/regexp/regexp_ebook.html")));
+
+var QUESTIONJS_WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/questionjs/questionjs_website.html")));
+var QUESTIONJS_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/questionjs/questionjs_ebook.html")));
 
 
 module.exports = {
@@ -11,10 +14,12 @@ module.exports = {
   website: {
     assets: './assets',
     css: [
-      'regexp.css'
+      'regexp/regexp_website.css',
+      'questionjs/questionjs_website.css'
     ],
     js: [
-      'regexp.js',
+      'questionjs/questionjs.js',
+      'regexp/regexp.js',
       'xregexp/xregexp.js',
       "ace/ace.js",
       "ace/theme-dreamweaver.js"
@@ -23,7 +28,8 @@ module.exports = {
   ebook: {
     assets: './assets',
     css: [
-      'regexpebook.css'
+      'questionjs/questionjs_ebook.css',
+      'regexp/regexp_ebook.css'
     ]
 
   },
@@ -41,16 +47,51 @@ module.exports = {
           });
 
           // Select appropriate template
-          var tpl = (this.generator === 'website' ? WEBSITE_TEMPLATE : EBOOK_TEMPLATE);
+          var tpl = (this.generator === 'website' ? REGEXP_WEBSITE_TEMPLATE : REGEXP_EBOOK_TEMPLATE);
 
           return tpl({
               message: blk.body,
-              codes: codes
+              codes: codes,
+              config: blk.kwargs
+
           });
+      }
+
+    },
+    questionjs: {
+
+      blocks:["solution", "validation"],
+      process: function(blk) {
+
+
+        var codes = {};
+
+        _.each(blk.blocks, function(_blk) {
+            codes[_blk.name] = _blk.body.trim();
+        });
+
+        // Select appropriate template
+        var tpl = (this.generator === 'website' ? QUESTIONJS_WEBSITE_TEMPLATE : QUESTIONJS_EBOOK_TEMPLATE);
+
+        return tpl({
+            message: blk.body,
+            codes: codes,
+            config: blk.kwargs
+
+        });
+
+
       }
 
     }
 
+  },
+  hooks: {
+
+    "init": function() {
+
+
+    }
 
   }
 
