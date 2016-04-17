@@ -79,7 +79,7 @@ function(answer) {
 
 ## Parameters
 
-You can specify four parameters at the moment: width, height, color and show or not gutter for the editor for each exercise.
+You can specify four parameters at the moment: `width`, `height`, `color` and show or not `gutter` for the editor for each exercise.
 
 ```
 {% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
