@@ -19,7 +19,7 @@ and allows you to:
 
 
 To use the `jazer` plugin in your Gitbook project, add the `jazer`
-plugin to the `book.json` file, then install plugins using `gitbook install`.
+plugin to the `book.json` file, then install the plugins using `gitbook install`.
 
 ```json
 {
