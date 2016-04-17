@@ -29,7 +29,7 @@ plugin to the `book.json` file, then install the plugins using `gitbook install`
 
 ## Regexp questions 
 
-### Simple example
+### Simple `regexp` question example
 
 ```javascript
 {% regexp %}
@@ -40,7 +40,7 @@ Christopher Columbus
 /(\s*(Crist[oó]bal\s+)?Col[oó]n\s*)|((Christopher\s+)?Columbus)/i
 {% endregexp %}
 ```
-### Example using [XRegExp](http://xregexp.com/):
+### `regexp` example using [XRegExp](http://xregexp.com/):
 
 You can also use [XRegExp](http://xregexp.com/):
 
