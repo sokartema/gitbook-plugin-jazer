@@ -9,16 +9,17 @@ This is work in development. Use it at your own risk.
 ## What is this
 
 This is a plugin example for [gitbook](https://www.gitbook.com)
-and allow you to create exercises and validate the answer with a regular expresion
-(Using [XRegExp](http://xregexp.com/))
+and allows you to:
 
-You can create also exercises and validate the answer with a javascript function
+1. Create `{% regexp %}` exercises: The answer  to the posed question is validated using a regular expresion written by the gitbook author
+(Using [XRegExp](http://xregexp.com/))
+2. Create `{% questionjs %}` exercises: The answer to the psoed question is validated using a JavaScript function written by the gitbook author
 
 ## Install
 
 
 To use the `jazer` plugin in your Gitbook project, add the `jazer`
-plugin to the `book.json` file, then install plugins using `gitbook install`.
+plugin to the `book.json` file, then install the plugins using `gitbook install`.
 
 ```json
 {
@@ -26,71 +27,77 @@ plugin to the `book.json` file, then install plugins using `gitbook install`.
 }
 ```
 
-## Simple example
+## Regexp questions 
 
-```
+### Simple `regexp` question example
+
+```javascript
 {% regexp %}
-¿Quien descubrió America?
+¿Who discovered America?
 {% solution %}
-Cristobal Colon
+Christopher Columbus
 {% validation %}
-/\s*(Crist[oó]bal\s+)?Col[oó]n\s*/i
+/(\s*(Crist[oó]bal\s+)?Col[oó]n\s*)|((Christopher\s+)?Columbus)/i
 {% endregexp %}
 ```
-## Example [XRegExp](http://xregexp.com/):
+### `regexp` example using [XRegExp](http://xregexp.com/):
 
-You can use [XRegExp](http://xregexp.com/):
+You can also use [XRegExp](http://xregexp.com/):
 
-```
+```javascript
 {% regexp %}
-¿Quienes reinaban en España cuando se descubrió America?
+Who were the Spanish kings when America was discovered?
 {% solution %}
-Los Reyes Católicos
+Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand II of Aragon and Isabella I of Castile
 {% validation %}
 /
-  (Isabel\s+                    # nombre sencillo
-  ((I\s+)?de\s+Castilla\s+)?    # titulo de Isabel
-  y
-  \s+Fernando                   # nombre sencillo
-  (\s+(II\s+)?de\s+Arag[oó]n)?) # titulo de Fernando
-|
-  (Reyes\s+Cat[oó]licos)  # conocidos también por este nombre
+  (Catholic\s+Monarchs)            | 
+  (Catholic\s+Kings)               |
+  (Catholic\s+Majesties)           |
+  ((Spanish)?\s+Reyes\s+Católicos) |
+  (Ferdinand(\s+II)?(\s+of\s+Aragon)?(\s+and)?(\s+Isabella)(\s+I)?(\s+of\s+Castill?e) |
+  (Isabella)(\s+I)?(\s+of\s+Castill?e)(\s+and)?\s+(Ferdinand(\s+II)?(of\s+Aragon)?
 /ix
 {% endregexp %}
 ```
 
-## Example questionjs
+## Questionjs exercises
 
-```
+```javascript
 {% questionjs  width="30%", height="10%", color="#BB504B"%}
-¿Quienes reinaban en España cuando se descubrió America?
+Who were the Spanish kings when America was discovered?
 {% solution %}
-reyes catolicos
+Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand II of Aragon and Isabella I of Castile
 {% validation %}
-function(respuesta) {
-  if (respuesta.match(/reyes\s+catolicos/i)) return true;
-  if (respuesta.match(/isabel/i && respuesta.match(/fernando/i) )) return true;
+function(answer) {
+  if (answer.match(/Catholic\s+(Monarchs|Kings|Majesties)/i)) return true;
+  if (answer.match(/(Spanish\s+)?Reyes\s+Cat[oó]licos/i)) return true;
+  if (answer.match(/isabel|isabella/i && respuesta.match(/fernando|ferdinand/i) )) return true;
 }
 {% endquestionjs %}
 ```
 
-##Parameters
+## Parameters
 
-You can specify four parameters at the moment: width, height, color and show or not gutter for the editor for each exercise.
+For each exercise you can specify four parameters: `width`, `height`, `color  and `gutter` 
 
 ```
 {% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
-
 ```
-the width and height must be a percentage, color can be a value of css and gutter true or false.
+
+* The `width` and `height` must be a percentage, 
+* `color` can be any CSS valid value and 
+* `gutter` must be  `true` or `false` (whether to show or not the `gutter`).
 
 
-## Errores en la XRegExp
+## Errors 
 
-En el caso de que la [XRegExp](http://xregexp.com/) contenga errores
-se abre una ventana de alerta.
+* For `regexp` questions an `alert` window will open in case the [XRegExp](http://xregexp.com/) has errors.
+* For `questionjs` questions an `alert` window will open in case the function code has errors.
 
-En la siguiente expresión regular el paréntesis abrir no tiene matching paréntesis cerrar:
+### Example of `regexp` question having errors
+
+In the following regular expression the open parenthesis has no matching closing parenthesis:
 
 ```javascript
 {% regexp %}
@@ -109,7 +116,7 @@ Los Reyes Católicos
 ```
 
 
-Al ser procesado el plugin emite un `alert` con el mensaje de error:
+When the plugin is processed it emits an `alert` with the error message:
+
 ![error message: bad regexp](https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png)
 
-En el caso de questionjs si la funcion está mal definida tambien saldrá una ventana de alerta con el error de la funcion
