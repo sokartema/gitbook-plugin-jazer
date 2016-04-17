@@ -9,7 +9,7 @@ This is work in development. Use it at your own risk.
 ## What is this
 
 This is a plugin example for [gitbook](https://www.gitbook.com)
-and allow you to 
+and allows you to:
 
 1. Create `{% regexp %}` exercises: The answer  to the posed question is validated using a regular expresion written by the author
 (Using [XRegExp](http://xregexp.com/))
