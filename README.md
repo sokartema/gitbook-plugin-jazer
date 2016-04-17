@@ -11,7 +11,7 @@ This is work in development. Use it at your own risk.
 This is a plugin example for [gitbook](https://www.gitbook.com)
 and allows you to:
 
-1. Create `{% regexp %}` exercises: The answer  to the posed question is validated using a regular expresion written by the author
+1. Create `{% regexp %}` exercises: The answer  to the posed question is validated using a regular expresion written by the gitbook author
 (Using [XRegExp](http://xregexp.com/))
 2. Create `{% questionjs %}` exercises: The answer to the psoed question is validated using a JavaScript function written by the gitbook author
 
