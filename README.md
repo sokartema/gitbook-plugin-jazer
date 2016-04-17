@@ -31,7 +31,7 @@ plugin to the `book.json` file, then install the plugins using `gitbook install`
 
 ### Simple example
 
-```
+```javascript
 {% regexp %}
 ¿Who discovered America?
 {% solution %}
@@ -44,7 +44,7 @@ Christopher Columbus
 
 You can also use [XRegExp](http://xregexp.com/):
 
-```
+```javascript
 {% regexp %}
 Who were the Spanish kings when America was discovered?
 {% solution %}
@@ -63,7 +63,7 @@ Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Re
 
 ## Questionjs exercises
 
-```
+```javascript
 {% questionjs  width="30%", height="10%", color="#BB504B"%}
 Who were the Spanish kings when America was discovered?
 {% solution %}
