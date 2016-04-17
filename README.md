@@ -83,9 +83,9 @@ You can specify four parameters at the moment: width, height, color and show or 
 
 ```
 {% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
-
 ```
-* the `width` and `height` must be a percentage, 
+
+* The `width` and `height` must be a percentage, 
 * `color` can be any CSS valid value and 
 * `gutter` must be  `true` or `false`.
 
