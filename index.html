@@ -30,64 +30,104 @@
 <p>This is work in development. Use it at your own risk.</p>
 
 <h2>
-<a id="que-es" class="anchor" href="#que-es" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Que es</h2>
+<a id="what-is-this" class="anchor" href="#what-is-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is this</h2>
 
-<p>Este es un plugin de ejemplo para <a href="https://www.gitbook.com">gitbook</a>
-en el que se permite realizar
-ejercicios cuya respuesta se valida mediante una expresión regular
-(Usando <a href="http://xregexp.com/">XRegExp</a>)</p>
+<p>This is a plugin example for <a href="https://www.gitbook.com">gitbook</a>
+and allows you to:</p>
+
+<ol>
+<li>Create <code>{% regexp %}</code> exercises: The answer  to the posed question is validated using a regular expresion written by the gitbook author
+(Using <a href="http://xregexp.com/">XRegExp</a>)</li>
+<li>Create <code>{% questionjs %}</code> exercises: The answer to the psoed question is validated using a JavaScript function written by the gitbook author</li>
+</ol>
 
 <h2>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 
 <p>To use the <code>jazer</code> plugin in your Gitbook project, add the <code>jazer</code>
-plugin to the <code>book.json</code> file, then install plugins using <code>gitbook install</code>.</p>
+plugin to the <code>book.json</code> file, then install the plugins using <code>gitbook install</code>.</p>
 
 <div class="highlight highlight-source-json"><pre>{
     <span class="pl-s"><span class="pl-pds">"</span>plugins<span class="pl-pds">"</span></span>: [<span class="pl-s"><span class="pl-pds">"</span>jazer<span class="pl-pds">"</span></span>]
 }</pre></div>
 
 <h2>
-<a id="ejemplo-simple" class="anchor" href="#ejemplo-simple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ejemplo Simple</h2>
+<a id="regexp-questions" class="anchor" href="#regexp-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Regexp questions</h2>
 
-<pre><code>{% regexp %}
-¿Quien descubrió America?
-{% solution %}
-Cristobal Colon
-{% validation %}
-/\s*(Crist[oó]bal\s+)?Col[oó]n\s*/i
-{% endregexp %}
-</code></pre>
+<h3>
+<a id="simple-regexp-question-example" class="anchor" href="#simple-regexp-question-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple <code>regexp</code> question example</h3>
+
+<div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> regexp <span class="pl-k">%</span>}
+¿Who discovered America<span class="pl-k">?</span>
+{<span class="pl-k">%</span> solution <span class="pl-k">%</span>}
+Christopher Columbus
+{<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
+<span class="pl-sr"><span class="pl-pds">/</span>(<span class="pl-c1">\s</span><span class="pl-k">*</span>(Crist<span class="pl-c1">[oó]</span>bal<span class="pl-c1">\s</span><span class="pl-k">+</span>)<span class="pl-k">?</span>Col<span class="pl-c1">[oó]</span>n<span class="pl-c1">\s</span><span class="pl-k">*</span>)<span class="pl-k">|</span>((Christopher<span class="pl-c1">\s</span><span class="pl-k">+</span>)<span class="pl-k">?</span>Columbus)<span class="pl-pds">/</span>i</span>
+{<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
+
+<h3>
+<a id="regexp-example-using-xregexp" class="anchor" href="#regexp-example-using-xregexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>regexp</code> example using <a href="http://xregexp.com/">XRegExp</a>:</h3>
+
+<p>You can also use <a href="http://xregexp.com/">XRegExp</a>:</p>
+
+<div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> regexp <span class="pl-k">%</span>}
+Who were the Spanish kings when America was discovered<span class="pl-k">?</span>
+{<span class="pl-k">%</span> solution <span class="pl-k">%</span>}
+Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand <span class="pl-c1">II</span> <span class="pl-k">of</span> Aragon and Isabella I <span class="pl-k">of</span> Castile
+{<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
+<span class="pl-k">/</span>
+  (Catholic\s<span class="pl-k">+</span>Monarchs)            <span class="pl-k">|</span> 
+  (Catholic\s<span class="pl-k">+</span>Kings)               <span class="pl-k">|</span>
+  (Catholic\s<span class="pl-k">+</span>Majesties)           <span class="pl-k">|</span>
+  ((Spanish)<span class="pl-k">?</span>\s<span class="pl-k">+</span>Reyes\s<span class="pl-k">+</span>Católicos) <span class="pl-k">|</span>
+  (<span class="pl-en">Ferdinand</span>(\s<span class="pl-k">+</span><span class="pl-c1">II</span>)<span class="pl-k">?</span>(\s<span class="pl-k">+</span><span class="pl-k">of</span>\s<span class="pl-k">+</span>Aragon)<span class="pl-k">?</span>(\s<span class="pl-k">+</span>and)<span class="pl-k">?</span>(\s<span class="pl-k">+</span>Isabella)(\s<span class="pl-k">+</span>I)<span class="pl-k">?</span>(\s<span class="pl-k">+</span><span class="pl-k">of</span>\s<span class="pl-k">+</span>Castill<span class="pl-k">?</span>e) <span class="pl-k">|</span>
+  (Isabella)(\s<span class="pl-k">+</span>I)<span class="pl-k">?</span>(\s<span class="pl-k">+</span><span class="pl-k">of</span>\s<span class="pl-k">+</span>Castill<span class="pl-k">?</span>e)(\s<span class="pl-k">+</span>and)<span class="pl-k">?</span>\s<span class="pl-k">+</span>(<span class="pl-en">Ferdinand</span>(\s<span class="pl-k">+</span><span class="pl-c1">II</span>)<span class="pl-k">?</span>(<span class="pl-k">of</span>\s<span class="pl-k">+</span>Aragon)<span class="pl-k">?</span>
+<span class="pl-k">/</span>ix
+{<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
 
 <h2>
-<a id="ejemplo-con-xregexp" class="anchor" href="#ejemplo-con-xregexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ejemplo con <a href="http://xregexp.com/">XRegExp</a>:</h2>
+<a id="questionjs-exercises" class="anchor" href="#questionjs-exercises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Questionjs exercises</h2>
 
-<p>Es posible usar <a href="http://xregexp.com/">XRegExp</a>:</p>
-
-<pre><code>{% regexp %}
-¿Quienes reinaban en España cuando se descubrió America?
-{% solution %}
-Los Reyes Católicos
-{% validation %}
-/
-  (Isabel\s+                    # nombre sencillo
-  ((I\s+)?de\s+Castilla\s+)?    # titulo de Isabel
-  y
-  \s+Fernando                   # nombre sencillo
-  (\s+(II\s+)?de\s+Arag[oó]n)?) # titulo de Fernando
-|
-  (Reyes\s+Cat[oó]licos)  # conocidos también por este nombre
-/ix
-{% endregexp %}
-</code></pre>
+<div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> questionjs  width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>30%<span class="pl-pds">"</span></span>, height<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>10%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#BB504B<span class="pl-pds">"</span></span><span class="pl-k">%</span>}
+Who were the Spanish kings when America was discovered<span class="pl-k">?</span>
+{<span class="pl-k">%</span> solution <span class="pl-k">%</span>}
+Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand <span class="pl-c1">II</span> <span class="pl-k">of</span> Aragon and Isabella I <span class="pl-k">of</span> Castile
+{<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
+<span class="pl-k">function</span>(<span class="pl-smi">answer</span>) {
+  <span class="pl-k">if</span> (<span class="pl-smi">answer</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>Catholic<span class="pl-c1">\s</span><span class="pl-k">+</span>(Monarchs<span class="pl-k">|</span>Kings<span class="pl-k">|</span>Majesties)<span class="pl-pds">/</span>i</span>)) <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+  <span class="pl-k">if</span> (<span class="pl-smi">answer</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>(Spanish<span class="pl-c1">\s</span><span class="pl-k">+</span>)<span class="pl-k">?</span>Reyes<span class="pl-c1">\s</span><span class="pl-k">+</span>Cat<span class="pl-c1">[oó]</span>licos<span class="pl-pds">/</span>i</span>)) <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+  <span class="pl-k">if</span> (<span class="pl-smi">answer</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>isabel<span class="pl-k">|</span>isabella<span class="pl-pds">/</span>i</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">respuesta</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>fernando<span class="pl-k">|</span>ferdinand<span class="pl-pds">/</span>i</span>) )) <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+}
+{<span class="pl-k">%</span> endquestionjs <span class="pl-k">%</span>}</pre></div>
 
 <h2>
-<a id="errores-en-la-xregexp" class="anchor" href="#errores-en-la-xregexp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Errores en la XRegExp</h2>
+<a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameters</h2>
 
-<p>En el caso de que la <a href="http://xregexp.com/">XRegExp</a> contenga errores
-se abre una ventana de alerta.</p>
+<p>For each exercise you can specify four parameters: <code>width</code>, <code>height</code>, <code>color  and</code>gutter` </p>
 
-<p>En la siguiente expresión regular el paréntesis abrir no tiene matching paréntesis cerrar:</p>
+<pre><code>{% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
+</code></pre>
+
+<ul>
+<li>The <code>width</code> and <code>height</code> must be a percentage, </li>
+<li>
+<code>color</code> can be any CSS valid value and </li>
+<li>
+<code>gutter</code> must be  <code>true</code> or <code>false</code> (whether to show or not the <code>gutter</code>).</li>
+</ul>
+
+<h2>
+<a id="errors" class="anchor" href="#errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Errors</h2>
+
+<ul>
+<li>For <code>regexp</code> questions an <code>alert</code> window will open in case the <a href="http://xregexp.com/">XRegExp</a> has errors.</li>
+<li>For <code>questionjs</code> questions an <code>alert</code> window will open in case the function code has errors.</li>
+</ul>
+
+<h3>
+<a id="example-of-regexp-question-having-errors" class="anchor" href="#example-of-regexp-question-having-errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example of <code>regexp</code> question having errors</h3>
+
+<p>In the following regular expression the open parenthesis has no matching closing parenthesis:</p>
 
 <div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> regexp <span class="pl-k">%</span>}
 ¿Quienes reinaban en España cuando se descubrió America<span class="pl-k">?</span>
@@ -103,8 +143,9 @@ Los Reyes Católicos
 <span class="pl-k">/</span>ix
 {<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
 
-<p>Al ser procesado el plugin emite un <code>alert</code> con el mensaje de error:
-<img src="https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png" alt="error message: bad regexp"></p>
+<p>When the plugin is processed it emits an <code>alert</code> with the error message:</p>
+
+<p><img src="https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png" alt="error message: bad regexp"></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/sokartema/gitbook-plugin-jazer">Gitbook-plugin-jazer</a> is maintained by <a href="https://github.com/sokartema">sokartema</a>.</span>
