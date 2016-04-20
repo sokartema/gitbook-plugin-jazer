@@ -109,7 +109,7 @@ You can specify the same parameters globally for all exercises with the book.jso
 
 ```
 
-Block parameters have priority over book.json parameters.
+Block parameters has priority over book.json parameters.
 
 
 ## Errors

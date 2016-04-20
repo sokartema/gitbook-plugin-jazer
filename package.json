@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-jazer",
-  "version": "1.0.43",
+  "version": "1.0.44",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "keywords": ["gitbook","plugin","regexp","exercises","jazer"],
   "main": "index.js",
