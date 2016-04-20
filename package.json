@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-jazer",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
   "keywords": ["gitbook","plugin","regexp","exercises","jazer"],
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer.git"
+    "url": "git+https://github.com/sokartema/gitbook-plugin-jazer"
   },
   "author": {
     "name": "Jazer Abreu",

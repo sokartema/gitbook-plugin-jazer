@@ -27,7 +27,7 @@ plugin to the `book.json` file, then install the plugins using `gitbook install`
 }
 ```
 
-## Regexp questions 
+## Regexp questions
 
 ### Simple `regexp` question example
 
@@ -51,7 +51,7 @@ Who were the Spanish kings when America was discovered?
 Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand II of Aragon and Isabella I of Castile
 {% validation %}
 /
-  (Catholic\s+Monarchs)            | 
+  (Catholic\s+Monarchs)            |
   (Catholic\s+Kings)               |
   (Catholic\s+Majesties)           |
   ((Spanish)?\s+Reyes\s+Católicos) |
@@ -79,18 +79,40 @@ function(answer) {
 
 ## Parameters
 
-For each exercise you can specify four parameters: `width`, `height`, `color  and `gutter` 
+For each exercise you can specify four parameters: `width`, `height`, `color`  and `gutter`
 
 ```
 {% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
 ```
 
-* The `width` and `height` must be a percentage, 
-* `color` can be any CSS valid value and 
+* The `width` and `height` must be a percentage,
+* `color` can be any CSS valid value and
 * `gutter` must be  `true` or `false` (whether to show or not the `gutter`).
 
+You can specify the same parameters globally for all exercises with the book.json file
 
-## Errors 
+```
+{
+
+  "plugins": ["jazer"],
+
+  "pluginsConfig":{
+      "jazer": {
+          "width": "80%",
+          "height": "20%",
+          "color": "#BB504B",
+          "gutter": "false"
+      }
+  }
+
+}
+
+```
+
+Block parameters have priority over book.json parameters.
+
+
+## Errors
 
 * For `regexp` questions an `alert` window will open in case the [XRegExp](http://xregexp.com/) has errors.
 * For `questionjs` questions an `alert` window will open in case the function code has errors.
@@ -119,4 +141,3 @@ Los Reyes Católicos
 When the plugin is processed it emits an `alert` with the error message:
 
 ![error message: bad regexp](https://raw.githubusercontent.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer/casiano/assets/regexpwitherror.png)
-
