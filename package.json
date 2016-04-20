@@ -1,7 +1,8 @@
 {
   "name": "gitbook-plugin-jazer",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "description": "Gitbook exercises validated through a XRegExp (work in progress)",
+  "keywords": ["gitbook","plugin","regexp","exercises","jazer"],
   "main": "index.js",
   "homepage": "http://sokartema.github.io/gitbook-plugin-jazer",
   "bugs": {
@@ -16,7 +17,8 @@
     "url": "git+https://github.com/ULL-ESIT-GRADOII-TFG/gitbook-plugin-jazer.git"
   },
   "author": {
-    "name": "Jazer Abreu"
+    "name": "Jazer Abreu",
+    "email": "sokartema@gmail.com"
   },
   "contributors": [ { "name": "Casiano", "email": "crguezl@ull.edu.es"} ],
   "license": "Apache-2.0",

@@ -9,7 +9,7 @@ require(["gitbook"],function(gitbook){
       var editor = ace.edit($regexp.find(".editor").get(0));
       editor.setTheme("ace/theme/dreamweaver");
 
-      if($regexp.find(".editor").attr('data-gutter')){
+      if($regexp.find(".editor").attr('data-gutter') === "true"){
         editor.renderer.setShowGutter(true);
       }else{
         editor.renderer.setShowGutter(false);

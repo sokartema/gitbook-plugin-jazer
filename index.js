@@ -42,6 +42,12 @@ module.exports = {
 
           var codes = {};
 
+          var config = {};
+
+          _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
+
+          _.assignIn(config, blk.kwargs);
+
           _.each(blk.blocks, function(_blk) {
               codes[_blk.name] = _blk.body.trim();
           });
@@ -52,7 +58,7 @@ module.exports = {
           return tpl({
               message: blk.body,
               codes: codes,
-              config: blk.kwargs
+              config: config
 
           });
       }
@@ -63,8 +69,13 @@ module.exports = {
       blocks:["solution", "validation"],
       process: function(blk) {
 
-
         var codes = {};
+
+        var config = {};
+
+        _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
+
+        _.assignIn(config, blk.kwargs);
 
         _.each(blk.blocks, function(_blk) {
             codes[_blk.name] = _blk.body.trim();
@@ -76,20 +87,12 @@ module.exports = {
         return tpl({
             message: blk.body,
             codes: codes,
-            config: blk.kwargs
+            config: config
 
         });
 
 
       }
-
-    }
-
-  },
-  hooks: {
-
-    "init": function() {
-
 
     }
 
