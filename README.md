@@ -102,12 +102,15 @@ You can specify the same parameters globally for all exercises with the book.jso
           "height": "20%",
           "color": "#BB504B",
           "gutter": "false"
+          "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"]
       }
   }
 
 }
 
 ```
+
+Book.json has a fifth parameters and allow you to load support librarys for questionjs blocks
 
 Block parameters has priority over book.json parameters.
 

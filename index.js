@@ -23,7 +23,19 @@ module.exports = {
       'xregexp/xregexp.js',
       "ace/ace.js",
       "ace/theme-dreamweaver.js"
-    ]
+    ],
+    html: {
+        "body:start": function(options) {
+            var scripts = "";
+            _.each(this.book.config.options.pluginsConfig.jazer.support , function(x){
+
+              scripts += "<script src='"+ x +"'></script>\n";
+
+            });
+
+            return scripts;
+        }
+    }
   },
   ebook: {
     assets: './assets',
