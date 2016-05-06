@@ -1,0 +1,123 @@
+.question{
+
+  margin:20px;
+  border: medium solid rgb(223, 64, 4);
+  //width: 300px;
+  background-color: white;
+  color:black;
+
+}
+
+.question .header{
+  background-color: rgb(223, 64, 4);
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.question .message{
+  padding:5px;
+  font-weight: bold;
+
+}
+
+.question .editor{
+
+  margin: 10px;
+  border-radius: 3px;
+  width: 80%;
+  height: 100px;
+}
+
+.question .buttons{
+  margin: 10px;
+}
+
+.question .buttons .button{
+
+   border-radius: 8px;
+   margin-right: 20px;
+}
+
+.question .submit{
+
+  background-color: rgb(19, 143, 72);
+  width:30%;
+  color:white;
+  border:none;
+}
+
+.question .solution{
+
+  background-color: rgb(16, 115, 147);
+  width:50%;
+  color:white;
+  border:none;
+}
+
+.question .submit:hover{
+
+  background-color: rgb(47, 161, 96);
+  width:30%;
+  color:white;
+}
+
+.question .solution:hover{
+
+  background-color: rgb(34, 138, 172);
+  width:50%;
+  color:white;
+}
+
+.question .submit:active{
+
+  background-color: rgb(14, 108, 54);
+  width:30%;
+  color:white;
+}
+
+.question .solution:active{
+
+  background-color: rgb(9, 91, 117);
+  width:50%;
+  color:white;
+}
+
+.question .correct{
+  border-radius: 8px;
+  color: white;
+  width: 35%;
+  margin-left:10px;
+  padding-left:5px;
+  background-color: rgb(19, 143, 72);
+  height: 0;
+  opacity: 0;
+
+}
+
+.question .fail{
+
+  border-radius: 8px;
+  color: white;
+  width: 35%;
+  padding-left:5px;
+  margin-left:10px;
+  background-color: red;
+  height: 0;
+  opacity: 0;
+
+}
+
+.question .correct.show{
+  height: 100%;
+  width: 50%;
+  opacity: 1;
+  transition: all 1s ease-in;
+}
+
+.question .fail.show{
+  height: 100%;
+  width: 50%;
+  opacity: 1;
+  transition: all 1s ease-in;
+}

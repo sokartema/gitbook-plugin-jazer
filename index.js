@@ -8,6 +8,9 @@ var REGEXP_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "
 var QUESTIONJS_WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/questionjs/questionjs_website.html")));
 var QUESTIONJS_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/questionjs/questionjs_ebook.html")));
 
+var QUESTION_WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/question/question_website.html")));
+var QUESTION_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/question/question_ebook.html")));
+
 
 module.exports = {
 
@@ -15,10 +18,12 @@ module.exports = {
     assets: './assets',
     css: [
       'regexp/regexp_website.css',
-      'questionjs/questionjs_website.css'
+      'questionjs/questionjs_website.css',
+      'question/question_website.css'
     ],
     js: [
       'questionjs/questionjs.js',
+      'question/question.js',
       'regexp/regexp.js',
       'xregexp/xregexp.js',
       "ace/ace.js",
@@ -49,7 +54,7 @@ module.exports = {
 
     regexp: {
 
-      blocks: ["solution", "validation"],
+      blocks: ["editor", "solution", "validation"],
       process: function(blk) {
 
           var codes = {};
@@ -78,7 +83,7 @@ module.exports = {
     },
     questionjs: {
 
-      blocks:["solution", "validation"],
+      blocks:["editor", "solution", "validation"],
       process: function(blk) {
 
         var codes = {};
@@ -95,6 +100,37 @@ module.exports = {
 
         // Select appropriate template
         var tpl = (this.generator === 'website' ? QUESTIONJS_WEBSITE_TEMPLATE : QUESTIONJS_EBOOK_TEMPLATE);
+
+        return tpl({
+            message: blk.body,
+            codes: codes,
+            config: config
+
+        });
+
+
+      }
+
+    },
+    question: {
+
+      blocks:["editor","solution", "validation","language"],
+      process: function(blk) {
+
+        var codes = {};
+
+        var config = {};
+
+        _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
+
+        _.assignIn(config, blk.kwargs);
+
+        _.each(blk.blocks, function(_blk) {
+            codes[_blk.name] = _blk.body.trim();
+        });
+
+        // Select appropriate template
+        var tpl = (this.generator === 'website' ? QUESTION_WEBSITE_TEMPLATE : QUESTION_EBOOK_TEMPLATE);
 
         return tpl({
             message: blk.body,

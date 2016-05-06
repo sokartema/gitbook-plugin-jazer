@@ -15,6 +15,7 @@ require(["gitbook"],function(gitbook){
         editor.renderer.setShowGutter(false);
       }
 
+
         try {
           var match = codeValidation.match(/^\/((?:.|\n)*)\/([sxgimy]*)$/);
           var pattern = match[1];

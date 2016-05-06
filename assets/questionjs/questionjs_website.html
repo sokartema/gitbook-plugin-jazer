@@ -3,7 +3,7 @@
 	<div class="message">
 		<%= message %>
 	</div>
-	<div class ="editor" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>></div>
+	<div class ="editor" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>><%= codes.editor %></div>
     <div class= "correct"> Correct </div>
     <div class= "fail" >Match Failed</div>
 	<div class="buttons">
