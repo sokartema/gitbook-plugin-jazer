@@ -77,9 +77,37 @@ function(answer) {
 {% endquestionjs %}
 ```
 
+## Exercises accept markdown.
+
+```javascript
+
+{% regexp width="100%", height="10%", color="#0b3136" , gutter="true", editorAutoHeight="true" %}
+Escriba en la ventana de  edición el código de las pruebas con chai,
+incluyendo las partes que faltan en esta sugerencia.
+
+### Javascript
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+{% editor %}
+something
+{% solution %}
+something
+{% validation %}
+/
+something
+/ix
+{% endregexp %}
+```
+
+
 ## Parameters
 
-For each exercise you can specify four parameters: `width`, `height`, `color`  and `gutter`
+For each exercise you can specify six parameters: `width`, `height`, `color`, `gutter`, `editorHeight` , `editorAutoHeight`
 
 ```
 {% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
@@ -88,8 +116,10 @@ For each exercise you can specify four parameters: `width`, `height`, `color`  a
 * The `width` and `height` must be a percentage,
 * `color` can be any CSS valid value and
 * `gutter` must be  `true` or `false` (whether to show or not the `gutter`).
+* `editorHeight` must be on pixels ("200px").
+* `editorAutoHeight` "true" or "false" and let the plugin or not calculate the editor height based on solution length.
 
-You can specify the same parameters globally for all exercises with the book.json file
+You can specify the same parameters globally for all exercises with the book.json file.
 
 ```
 {
@@ -102,7 +132,9 @@ You can specify the same parameters globally for all exercises with the book.jso
           "height": "20%",
           "color": "#BB504B",
           "gutter": "false"
-          "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"]
+          "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"],
+          "editorHeight": "100px" //or editorAutoHeight: "true"
+
       }
   }
 
@@ -110,9 +142,11 @@ You can specify the same parameters globally for all exercises with the book.jso
 
 ```
 
-Book.json has a fifth parameters and allow you to load support librarys for questionjs blocks
+Book.json has one additional parameter and allow you to load support librarys for questionjs blocks with `support` and passing an array of cdn´s.
 
 Block parameters has priority over book.json parameters.
+
+If `editorHeight` is specified then has priority over `editorAutoHeight`, but `editorAutoHeight` specified on block still having priority over `editorHeight` book.json parameter.
 
 
 ## Errors

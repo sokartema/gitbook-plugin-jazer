@@ -3,7 +3,7 @@
 	<div class="message">
 		<%= message %>
 	</div>
-	<div class ="editor" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" data-language="<%= codes.language %>"  <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>><%= codes.editor %></div>
+	<div class ="editor" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" data-language="<%= codes.language %>"  <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>style="<% if (config.editorHeight){ print("height: "+ config.editorHeight +";"); }%> <% if (config.editorAutoHeight === "true" && !config.editorHeight){ print("height: "+ codes.solution.split(/\r\n|\r|\n/).length * 20 +"px;"); }%>"><%= codes.editor %></div>
     <div class= "correct"> Correct </div>
     <div class= "fail" >Match Failed</div>
 	<div class="buttons">

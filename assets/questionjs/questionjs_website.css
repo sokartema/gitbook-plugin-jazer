@@ -1,6 +1,5 @@
 .questionjs{
 
-  margin:20px;
   border: medium solid rgb(223, 64, 4);
   //width: 300px;
   background-color: white;
@@ -25,7 +24,7 @@
 
   margin: 10px;
   border-radius: 3px;
-  width: 80%;
+  width: 90%;
   height: 100px;
 }
 
@@ -42,7 +41,7 @@
 .questionjs .submit{
 
   background-color: rgb(19, 143, 72);
-  width:30%;
+  width: 40%;
   color:white;
   border:none;
 }
@@ -50,7 +49,7 @@
 .questionjs .solution{
 
   background-color: rgb(16, 115, 147);
-  width:50%;
+  width: 40%;
   color:white;
   border:none;
 }
@@ -58,28 +57,28 @@
 .questionjs .submit:hover{
 
   background-color: rgb(47, 161, 96);
-  width:30%;
+  width: 40%;
   color:white;
 }
 
 .questionjs .solution:hover{
 
   background-color: rgb(34, 138, 172);
-  width:50%;
+  width: 40%;
   color:white;
 }
 
 .questionjs .submit:active{
 
   background-color: rgb(14, 108, 54);
-  width:30%;
+  width: 40%;
   color:white;
 }
 
 .questionjs .solution:active{
 
   background-color: rgb(9, 91, 117);
-  width:50%;
+  width: 40%;
   color:white;
 }
 

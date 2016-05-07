@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var fs = require("fs");
 var path = require("path");
+var marked = require("marked");
 
 var REGEXP_WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/regexp/regexp_website.html")));
 var REGEXP_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/regexp/regexp_ebook.html")));
@@ -63,17 +64,23 @@ module.exports = {
 
           _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
 
+          if(blk.kwargs.editorAutoHeight === "true"){
+
+            config.editorHeight = null;
+          }
+
           _.assignIn(config, blk.kwargs);
 
           _.each(blk.blocks, function(_blk) {
-              codes[_blk.name] = _blk.body.trim();
+
+              codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
           });
 
           // Select appropriate template
           var tpl = (this.generator === 'website' ? REGEXP_WEBSITE_TEMPLATE : REGEXP_EBOOK_TEMPLATE);
 
           return tpl({
-              message: blk.body,
+              message: marked(blk.body),
               codes: codes,
               config: config
 
@@ -92,17 +99,23 @@ module.exports = {
 
         _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
 
+        if(blk.kwargs.editorAutoHeight === "true"){
+
+          config.editorHeight = null;
+        }
+
         _.assignIn(config, blk.kwargs);
 
         _.each(blk.blocks, function(_blk) {
-            codes[_blk.name] = _blk.body.trim();
+
+            codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
         });
 
         // Select appropriate template
         var tpl = (this.generator === 'website' ? QUESTIONJS_WEBSITE_TEMPLATE : QUESTIONJS_EBOOK_TEMPLATE);
 
         return tpl({
-            message: blk.body,
+            message: marked(blk.body),
             codes: codes,
             config: config
 
@@ -123,17 +136,24 @@ module.exports = {
 
         _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
 
+        if(blk.kwargs.editorAutoHeight === "true"){
+
+          config.editorHeight = null;
+        }
+
         _.assignIn(config, blk.kwargs);
 
+
         _.each(blk.blocks, function(_blk) {
-            codes[_blk.name] = _blk.body.trim();
+
+            codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
         });
 
         // Select appropriate template
         var tpl = (this.generator === 'website' ? QUESTION_WEBSITE_TEMPLATE : QUESTION_EBOOK_TEMPLATE);
 
         return tpl({
-            message: blk.body,
+            message: marked(blk.body),
             codes: codes,
             config: config
 
