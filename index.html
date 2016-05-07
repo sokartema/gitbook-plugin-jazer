@@ -63,6 +63,8 @@ plugin to the <code>book.json</code> file, then install the plugins using <code>
 Christopher Columbus
 {<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
 <span class="pl-sr"><span class="pl-pds">/</span>(<span class="pl-c1">\s</span><span class="pl-k">*</span>(Crist<span class="pl-c1">[oó]</span>bal<span class="pl-c1">\s</span><span class="pl-k">+</span>)<span class="pl-k">?</span>Col<span class="pl-c1">[oó]</span>n<span class="pl-c1">\s</span><span class="pl-k">*</span>)<span class="pl-k">|</span>((Christopher<span class="pl-c1">\s</span><span class="pl-k">+</span>)<span class="pl-k">?</span>Columbus)<span class="pl-pds">/</span>i</span>
+{<span class="pl-k">%</span> editor <span class="pl-k">%</span>}
+Placeholder text on editor
 {<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
 
 <h3>
@@ -83,6 +85,8 @@ Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Re
   (<span class="pl-en">Ferdinand</span>(\s<span class="pl-k">+</span><span class="pl-c1">II</span>)<span class="pl-k">?</span>(\s<span class="pl-k">+</span><span class="pl-k">of</span>\s<span class="pl-k">+</span>Aragon)<span class="pl-k">?</span>(\s<span class="pl-k">+</span>and)<span class="pl-k">?</span>(\s<span class="pl-k">+</span>Isabella)(\s<span class="pl-k">+</span>I)<span class="pl-k">?</span>(\s<span class="pl-k">+</span><span class="pl-k">of</span>\s<span class="pl-k">+</span>Castill<span class="pl-k">?</span>e) <span class="pl-k">|</span>
   (Isabella)(\s<span class="pl-k">+</span>I)<span class="pl-k">?</span>(\s<span class="pl-k">+</span><span class="pl-k">of</span>\s<span class="pl-k">+</span>Castill<span class="pl-k">?</span>e)(\s<span class="pl-k">+</span>and)<span class="pl-k">?</span>\s<span class="pl-k">+</span>(<span class="pl-en">Ferdinand</span>(\s<span class="pl-k">+</span><span class="pl-c1">II</span>)<span class="pl-k">?</span>(<span class="pl-k">of</span>\s<span class="pl-k">+</span>Aragon)<span class="pl-k">?</span>
 <span class="pl-k">/</span>ix
+{<span class="pl-k">%</span> editor <span class="pl-k">%</span>}
+Placeholder text on editor
 {<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
 
 <h2>
@@ -98,10 +102,12 @@ Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Re
   <span class="pl-k">if</span> (<span class="pl-smi">answer</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>(Spanish<span class="pl-c1">\s</span><span class="pl-k">+</span>)<span class="pl-k">?</span>Reyes<span class="pl-c1">\s</span><span class="pl-k">+</span>Cat<span class="pl-c1">[oó]</span>licos<span class="pl-pds">/</span>i</span>)) <span class="pl-k">return</span> <span class="pl-c1">true</span>;
   <span class="pl-k">if</span> (<span class="pl-smi">answer</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>isabel<span class="pl-k">|</span>isabella<span class="pl-pds">/</span>i</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-smi">respuesta</span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span>fernando<span class="pl-k">|</span>ferdinand<span class="pl-pds">/</span>i</span>) )) <span class="pl-k">return</span> <span class="pl-c1">true</span>;
 }
+{<span class="pl-k">%</span> editor <span class="pl-k">%</span>}
+Placeholder text on editor
 {<span class="pl-k">%</span> endquestionjs <span class="pl-k">%</span>}</pre></div>
 
 <h2>
-<a id="exercises-accept-markdown" class="anchor" href="#exercises-accept-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exercises accept markdown.</h2>
+<a id="exercises-accept-markdown" class="anchor" href="#exercises-accept-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exercises accept markdown</h2>
 
 <div class="highlight highlight-source-js"><pre>
 {<span class="pl-k">%</span> regexp width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span>, height<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>10%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#0b3136<span class="pl-pds">"</span></span> , gutter<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>, editorAutoHeight<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-k">%</span>}
@@ -125,6 +131,17 @@ something
 something
 <span class="pl-k">/</span>ix
 {<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
+
+<h2>
+<a id="blocks" class="anchor" href="#blocks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Blocks</h2>
+
+<p>Each exercises has 3 blocks.</p>
+
+<p><code>{% solution %}</code>: The text the user must enter to validate the question. Its shown when the user click the solution button.</p>
+
+<p><code>{% validation %}</code>: The validation for the question.</p>
+
+<p><code>{% editor %}</code>: Specify a placeholder text on the editor.</p>
 
 <h2>
 <a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameters</h2>
