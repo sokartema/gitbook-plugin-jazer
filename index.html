@@ -76,7 +76,7 @@ Who were the Spanish kings when America was discovered<span class="pl-k">?</span
 Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand <span class="pl-c1">II</span> <span class="pl-k">of</span> Aragon and Isabella I <span class="pl-k">of</span> Castile
 {<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
 <span class="pl-k">/</span>
-  (Catholic\s<span class="pl-k">+</span>Monarchs)            <span class="pl-k">|</span> 
+  (Catholic\s<span class="pl-k">+</span>Monarchs)            <span class="pl-k">|</span>
   (Catholic\s<span class="pl-k">+</span>Kings)               <span class="pl-k">|</span>
   (Catholic\s<span class="pl-k">+</span>Majesties)           <span class="pl-k">|</span>
   ((Spanish)<span class="pl-k">?</span>\s<span class="pl-k">+</span>Reyes\s<span class="pl-k">+</span>Católicos) <span class="pl-k">|</span>
@@ -101,20 +101,78 @@ Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Re
 {<span class="pl-k">%</span> endquestionjs <span class="pl-k">%</span>}</pre></div>
 
 <h2>
+<a id="exercises-accept-markdown" class="anchor" href="#exercises-accept-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exercises accept markdown.</h2>
+
+<div class="highlight highlight-source-js"><pre>
+{<span class="pl-k">%</span> regexp width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span>, height<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>10%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#0b3136<span class="pl-pds">"</span></span> , gutter<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>, editorAutoHeight<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-k">%</span>}
+Escriba en la ventana de  edición el código de las pruebas con chai,
+incluyendo las partes que faltan en esta sugerencia.
+
+### Javascript
+
+<span class="pl-k">|</span> Tables        <span class="pl-k">|</span> Are           <span class="pl-k">|</span> Cool  <span class="pl-k">|</span>
+<span class="pl-k">|</span> <span class="pl-k">------------</span><span class="pl-k">-</span> <span class="pl-k">|</span><span class="pl-k">:</span><span class="pl-k">------------</span><span class="pl-k">-:</span><span class="pl-k">|</span> <span class="pl-k">----</span><span class="pl-k">-:</span><span class="pl-k">|</span>
+<span class="pl-k">|</span> col <span class="pl-c1">3</span> is      <span class="pl-k">|</span> right<span class="pl-k">-</span>aligned <span class="pl-k">|</span> $1600 <span class="pl-k">|</span>
+<span class="pl-k">|</span> col <span class="pl-c1">2</span> is      <span class="pl-k">|</span> centered      <span class="pl-k">|</span>   $12 <span class="pl-k">|</span>
+<span class="pl-k">|</span> zebra stripes <span class="pl-k">|</span> are neat      <span class="pl-k">|</span>    $1 <span class="pl-k">|</span>
+
+{<span class="pl-k">%</span> editor <span class="pl-k">%</span>}
+something
+{<span class="pl-k">%</span> solution <span class="pl-k">%</span>}
+something
+{<span class="pl-k">%</span> validation <span class="pl-k">%</span>}
+<span class="pl-k">/</span>
+something
+<span class="pl-k">/</span>ix
+{<span class="pl-k">%</span> endregexp <span class="pl-k">%</span>}</pre></div>
+
+<h2>
 <a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameters</h2>
 
-<p>For each exercise you can specify four parameters: <code>width</code>, <code>height</code>, <code>color  and</code>gutter` </p>
+<p>For each exercise you can specify six parameters: <code>width</code>, <code>height</code>, <code>color</code>, <code>gutter</code>, <code>editorHeight</code> , <code>editorAutoHeight</code></p>
 
 <pre><code>{% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
 </code></pre>
 
 <ul>
-<li>The <code>width</code> and <code>height</code> must be a percentage, </li>
+<li>The <code>width</code> and <code>height</code> must be a percentage,</li>
 <li>
-<code>color</code> can be any CSS valid value and </li>
+<code>color</code> can be any CSS valid value and</li>
 <li>
 <code>gutter</code> must be  <code>true</code> or <code>false</code> (whether to show or not the <code>gutter</code>).</li>
+<li>
+<code>editorHeight</code> must be on pixels ("200px").</li>
+<li>
+<code>editorAutoHeight</code> "true" or "false" and let the plugin or not calculate the editor height based on solution length.</li>
 </ul>
+
+<p>You can specify the same parameters globally for all exercises with the book.json file.</p>
+
+<pre><code>{
+
+  "plugins": ["jazer"],
+
+  "pluginsConfig":{
+      "jazer": {
+          "width": "80%",
+          "height": "20%",
+          "color": "#BB504B",
+          "gutter": "false"
+          "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"],
+          "editorHeight": "100px" //or editorAutoHeight: "true"
+
+      }
+  }
+
+}
+
+</code></pre>
+
+<p>Book.json has one additional parameter and allow you to load support librarys for questionjs blocks with <code>support</code> and passing an array of cdn´s.</p>
+
+<p>Block parameters has priority over book.json parameters.</p>
+
+<p>If <code>editorHeight</code> is specified then has priority over <code>editorAutoHeight</code>, but <code>editorAutoHeight</code> specified on block still having priority over <code>editorHeight</code> book.json parameter.</p>
 
 <h2>
 <a id="errors" class="anchor" href="#errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Errors</h2>
