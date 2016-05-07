@@ -38,6 +38,8 @@ plugin to the `book.json` file, then install the plugins using `gitbook install`
 Christopher Columbus
 {% validation %}
 /(\s*(Crist[oó]bal\s+)?Col[oó]n\s*)|((Christopher\s+)?Columbus)/i
+{% editor %}
+Placeholder text on editor
 {% endregexp %}
 ```
 ### `regexp` example using [XRegExp](http://xregexp.com/):
@@ -58,6 +60,8 @@ Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Re
   (Ferdinand(\s+II)?(\s+of\s+Aragon)?(\s+and)?(\s+Isabella)(\s+I)?(\s+of\s+Castill?e) |
   (Isabella)(\s+I)?(\s+of\s+Castill?e)(\s+and)?\s+(Ferdinand(\s+II)?(of\s+Aragon)?
 /ix
+{% editor %}
+Placeholder text on editor
 {% endregexp %}
 ```
 
@@ -74,10 +78,12 @@ function(answer) {
   if (answer.match(/(Spanish\s+)?Reyes\s+Cat[oó]licos/i)) return true;
   if (answer.match(/isabel|isabella/i && respuesta.match(/fernando|ferdinand/i) )) return true;
 }
+{% editor %}
+Placeholder text on editor
 {% endquestionjs %}
 ```
 
-## Exercises accept markdown.
+## Exercises accept markdown
 
 ```javascript
 
@@ -103,6 +109,17 @@ something
 /ix
 {% endregexp %}
 ```
+
+## Blocks
+
+Each exercises has 3 blocks.
+
+`{% solution %}`: The text the user must enter to validate the question. Its shown when the user click the solution button.
+
+`{% validation %}`: The validation for the question.
+
+`{% editor %}`: Specify a placeholder text on the editor.
+
 
 
 ## Parameters
