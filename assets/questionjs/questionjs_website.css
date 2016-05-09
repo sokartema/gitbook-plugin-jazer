@@ -1,4 +1,6 @@
-.questionjs{
+padding: 5px;
+left: 30%;
+position: relative;.questionjs{
 
   border: medium solid rgb(223, 64, 4);
   //width: 300px;
@@ -83,14 +85,20 @@
 }
 
 .questionjs .correct{
+
   border-radius: 8px;
   color: white;
-  width: 35%;
   margin-left:10px;
   padding-left:5px;
-  background-color: rgb(19, 143, 72);
+  width:35%;
+  padding: 5px;
+  left: 30%;
+  position: relative;
+  background: #17c048;
   height: 0;
   opacity: 0;
+  font-weight: bold;
+  border: solid grey thin;
 
 }
 
@@ -98,25 +106,28 @@
 
   border-radius: 8px;
   color: white;
-  width: 35%;
   padding-left:5px;
   margin-left:10px;
-  background-color: red;
+  width:35%;
+  padding: 5px;
+  left: 30%;
+  position: relative;
+  background: rgba(246,41,12,1);
   height: 0;
   opacity: 0;
+  font-weight: bold;
+  border: solid grey thin;
 
 }
 
 .questionjs .correct.show{
   height: 100%;
-  width: 50%;
   opacity: 1;
   transition: all 1s ease-in;
 }
 
 .questionjs .fail.show{
   height: 100%;
-  width: 50%;
   opacity: 1;
   transition: all 1s ease-in;
 }

@@ -20,7 +20,8 @@ module.exports = {
     css: [
       'regexp/regexp_website.css',
       'questionjs/questionjs_website.css',
-      'question/question_website.css'
+      'question/question_website.css',
+      "fontawesome/css/font-awesome.min.css"
     ],
     js: [
       'questionjs/questionjs.js',
@@ -29,6 +30,7 @@ module.exports = {
       'xregexp/xregexp.js',
       "ace/ace.js",
       "ace/theme-dreamweaver.js"
+
     ],
     html: {
         "body:start": function(options) {
@@ -47,6 +49,7 @@ module.exports = {
     assets: './assets',
     css: [
       'questionjs/questionjs_ebook.css',
+      'question/question_ebook.css',
       'regexp/regexp_ebook.css'
     ]
 
@@ -74,6 +77,8 @@ module.exports = {
           _.each(blk.blocks, function(_blk) {
 
               codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
+
+
           });
 
           // Select appropriate template
@@ -109,7 +114,10 @@ module.exports = {
         _.each(blk.blocks, function(_blk) {
 
             codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
+
+
         });
+
 
         // Select appropriate template
         var tpl = (this.generator === 'website' ? QUESTIONJS_WEBSITE_TEMPLATE : QUESTIONJS_EBOOK_TEMPLATE);
@@ -147,6 +155,7 @@ module.exports = {
         _.each(blk.blocks, function(_blk) {
 
             codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
+
         });
 
         // Select appropriate template

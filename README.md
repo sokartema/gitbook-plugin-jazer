@@ -68,7 +68,7 @@ Placeholder text on editor
 ## Questionjs exercises
 
 ```javascript
-{% questionjs  width="30%", height="10%", color="#BB504B"%}
+{% questionjs  width="30%", color="#BB504B"%}
 Who were the Spanish kings when America was discovered?
 {% solution %}
 Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand II of Aragon and Isabella I of Castile
@@ -87,7 +87,7 @@ Placeholder text on editor
 
 ```javascript
 
-{% regexp width="100%", height="10%", color="#0b3136" , gutter="true", editorAutoHeight="true" %}
+{% regexp width="100%", color="#0b3136" , gutter="true", editorAutoHeight="true" %}
 Escriba en la ventana de  edición el código de las pruebas con chai,
 incluyendo las partes que faltan en esta sugerencia.
 
@@ -114,7 +114,7 @@ something
 
 Each exercises has 3 blocks.
 
-`{% solution %}`: The text the user must enter to validate the question. Its shown when the user click the solution button.
+`{% solution %}`: The text the user must enter to validate the question. Its shown when the user click on the solution button.
 
 `{% validation %}`: The validation for the question.
 
@@ -124,17 +124,17 @@ Each exercises has 3 blocks.
 
 ## Parameters
 
-For each exercise you can specify six parameters: `width`, `height`, `color`, `gutter`, `editorHeight` , `editorAutoHeight`
+For each exercise you can specify five parameters: `width`, `color`, `gutter`, `editorHeight` , `editorAutoHeight`
 
 ```
-{% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
+{% questionjs  width="30%", color="#BB504B", gutter="true"%}
 ```
 
-* The `width` and `height` must be a percentage,
+* The `width` must be a percentage,
 * `color` can be any CSS valid value and
-* `gutter` must be  `true` or `false` (whether to show or not the `gutter`).
+* `gutter` must be  "true" or "false" (whether to show or not the `gutter`).
 * `editorHeight` must be on pixels ("200px").
-* `editorAutoHeight` "true" or "false" and let the plugin or not calculate the editor height based on solution length.
+* `editorAutoHeight` "true" or "false" and let the plugin calculate the editor height based on solution block length.
 
 You can specify the same parameters globally for all exercises with the book.json file.
 
@@ -146,7 +146,6 @@ You can specify the same parameters globally for all exercises with the book.jso
   "pluginsConfig":{
       "jazer": {
           "width": "80%",
-          "height": "20%",
           "color": "#BB504B",
           "gutter": "false"
           "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"],

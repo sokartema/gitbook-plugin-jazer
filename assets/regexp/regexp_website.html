@@ -1,11 +1,11 @@
-<div class="regexp" style="<% if (config.width){ print("width: "+ config.width +";"); }%> <% if (config.height){ print("height: "+ config.height +";"); }%> <% if (config.color){ print("border: medium solid  "+ config.color +";"); }%>">
+<div class="regexp" style="<% if (config.width){ print("width: "+ config.width +";"); }%> <% if (config.color){ print("border: medium solid  "+ config.color +";"); }%>">
 	<div class="header" style="<% if (config.color){ print("background-color: "+ config.color +";"); }%>">Regexp</div>
 	<div class="message">
 		<%= message %>
 	</div>
 	<div class ="editor" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>style="<% if (config.editorHeight){ print("height: "+ config.editorHeight +";"); }%> <% if (config.editorAutoHeight === "true" && !config.editorHeight){ print("height: "+ codes.solution.split(/\r\n|\r|\n/).length * 20 +"px;"); }%>"><%= codes.editor %></div>
-    <div class= "correct"> Correct </div>
-    <div class= "fail" >Match Failed</div>
+	<div class= "correct"> <i class="fa fa-check-square-o fa-lg"></i> Correct </div>
+	<div class= "fail" > <i class="fa fa-times fa-lg"></i> Match Failed</div>
 	<div class="buttons">
 	    <button class="button submit">Submit</button>
 	    <button class="button solution">Solution</button>
