@@ -12,6 +12,18 @@ var QUESTIONJS_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirnam
 var QUESTION_WEBSITE_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/question/question_website.html")));
 var QUESTION_EBOOK_TEMPLATE = _.template(fs.readFileSync(path.resolve(__dirname, "./assets/question/question_ebook.html")));
 
+function editorSizeFactor(fontSize){
+
+  var numb = fontSize.match(/\d/g);
+
+  numb = numb.join("");
+
+  var factor = (numb * 20) / 16;
+
+  return factor;
+
+}
+
 
 module.exports = {
 
@@ -65,9 +77,11 @@ module.exports = {
 
           var config = {};
 
+          config.factor = 20;
+
           _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
 
-          if(blk.kwargs.editorAutoHeight === "true"){
+          if(blk.kwargs.editorAutoHeight){
 
             config.editorHeight = null;
           }
@@ -80,6 +94,12 @@ module.exports = {
 
 
           });
+
+          if(config.fontSize){
+
+            config.factor = editorSizeFactor(config.fontSize);
+
+          }
 
           // Select appropriate template
           var tpl = (this.generator === 'website' ? REGEXP_WEBSITE_TEMPLATE : REGEXP_EBOOK_TEMPLATE);
@@ -102,9 +122,11 @@ module.exports = {
 
         var config = {};
 
+        config.factor = 20;
+
         _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
 
-        if(blk.kwargs.editorAutoHeight === "true"){
+        if(blk.kwargs.editorAutoHeight){
 
           config.editorHeight = null;
         }
@@ -117,6 +139,12 @@ module.exports = {
 
 
         });
+
+        if(config.fontSize){
+
+          config.factor = editorSizeFactor(config.fontSize);
+
+        }
 
 
         // Select appropriate template
@@ -142,9 +170,11 @@ module.exports = {
 
         var config = {};
 
+        config.factor = 20;
+
         _.assignIn(config,this.book.config.options.pluginsConfig.jazer);
 
-        if(blk.kwargs.editorAutoHeight === "true"){
+        if(blk.kwargs.editorAutoHeight){
 
           config.editorHeight = null;
         }
@@ -157,6 +187,12 @@ module.exports = {
             codes[_blk.name] = _blk.body.trim().replace(/"/g, "&quot;");
 
         });
+
+        if(config.fontSize){
+
+          config.factor = editorSizeFactor(config.fontSize);
+
+        }
 
         // Select appropriate template
         var tpl = (this.generator === 'website' ? QUESTION_WEBSITE_TEMPLATE : QUESTION_EBOOK_TEMPLATE);

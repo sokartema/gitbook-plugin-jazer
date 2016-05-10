@@ -34,7 +34,7 @@ require(["gitbook"],function(gitbook){
           };
 
                 $.ajax({
-                  url: 'http://192.168.1.35:8888/',
+                  url: 'http://127.0.0.1:8888/',
                   type: 'POST',
                   data: JSON.stringify(obj),
                   contentType: 'application/json',
@@ -58,8 +58,8 @@ require(["gitbook"],function(gitbook){
 
                   },
                   error: function(xhr, status, errorThrown ) {
-                    alert(xhr + "///" + status + "///" + errorThrown);
-                    console.log(xhr);
+                    
+                    alert(errorThrown + ": " + xhr.responseText);
 
                   }
 

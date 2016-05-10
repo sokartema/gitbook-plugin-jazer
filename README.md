@@ -124,7 +124,7 @@ Each exercises has 3 blocks.
 
 ## Parameters
 
-For each exercise you can specify five parameters: `width`, `color`, `gutter`, `editorHeight` , `editorAutoHeight`
+For each exercise you can specify six parameters: `width`, `color`, `gutter`, `editorHeight` , `editorAutoHeight` and `fontSize`
 
 ```
 {% questionjs  width="30%", color="#BB504B", gutter="true"%}
@@ -134,7 +134,8 @@ For each exercise you can specify five parameters: `width`, `color`, `gutter`, `
 * `color` can be any CSS valid value and
 * `gutter` must be  "true" or "false" (whether to show or not the `gutter`).
 * `editorHeight` must be on pixels ("200px").
-* `editorAutoHeight` "true" or "false" and let the plugin calculate the editor height based on solution block length.
+* `editorAutoHeight` "solution" or "editor" and let the plugin calculate the editor height based on solution or editor block length.
+* `fontSize` its the size of the font on pixels "16px" or "16". (I recommend activate editorAutoHeight if you specify this parameter)
 
 You can specify the same parameters globally for all exercises with the book.json file.
 
@@ -149,7 +150,8 @@ You can specify the same parameters globally for all exercises with the book.jso
           "color": "#BB504B",
           "gutter": "false"
           "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"],
-          "editorHeight": "100px" //or editorAutoHeight: "true"
+          "editorHeight": "100px" //or editorAutoHeight: "solution",
+          "fontSize": "16px"
 
       }
   }
