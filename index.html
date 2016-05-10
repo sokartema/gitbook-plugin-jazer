@@ -92,7 +92,7 @@ Placeholder text on editor
 <h2>
 <a id="questionjs-exercises" class="anchor" href="#questionjs-exercises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Questionjs exercises</h2>
 
-<div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> questionjs  width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>30%<span class="pl-pds">"</span></span>, height<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>10%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#BB504B<span class="pl-pds">"</span></span><span class="pl-k">%</span>}
+<div class="highlight highlight-source-js"><pre>{<span class="pl-k">%</span> questionjs  width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>30%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#BB504B<span class="pl-pds">"</span></span><span class="pl-k">%</span>}
 Who were the Spanish kings when America was discovered<span class="pl-k">?</span>
 {<span class="pl-k">%</span> solution <span class="pl-k">%</span>}
 Catholic Monarchs, also called Catholic Kings, or Catholic Majesties, Spanish Reyes Católicos, Ferdinand <span class="pl-c1">II</span> <span class="pl-k">of</span> Aragon and Isabella I <span class="pl-k">of</span> Castile
@@ -110,7 +110,7 @@ Placeholder text on editor
 <a id="exercises-accept-markdown" class="anchor" href="#exercises-accept-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exercises accept markdown</h2>
 
 <div class="highlight highlight-source-js"><pre>
-{<span class="pl-k">%</span> regexp width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span>, height<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>10%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#0b3136<span class="pl-pds">"</span></span> , gutter<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>, editorAutoHeight<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-k">%</span>}
+{<span class="pl-k">%</span> regexp width<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>100%<span class="pl-pds">"</span></span>, color<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>#0b3136<span class="pl-pds">"</span></span> , gutter<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>, editorAutoHeight<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> <span class="pl-k">%</span>}
 Escriba en la ventana de  edición el código de las pruebas con chai,
 incluyendo las partes que faltan en esta sugerencia.
 
@@ -137,7 +137,7 @@ something
 
 <p>Each exercises has 3 blocks.</p>
 
-<p><code>{% solution %}</code>: The text the user must enter to validate the question. Its shown when the user click the solution button.</p>
+<p><code>{% solution %}</code>: The text the user must enter to validate the question. Its shown when the user click on the solution button.</p>
 
 <p><code>{% validation %}</code>: The validation for the question.</p>
 
@@ -146,21 +146,23 @@ something
 <h2>
 <a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parameters</h2>
 
-<p>For each exercise you can specify six parameters: <code>width</code>, <code>height</code>, <code>color</code>, <code>gutter</code>, <code>editorHeight</code> , <code>editorAutoHeight</code></p>
+<p>For each exercise you can specify six parameters: <code>width</code>, <code>color</code>, <code>gutter</code>, <code>editorHeight</code> , <code>editorAutoHeight</code> and <code>fontSize</code></p>
 
-<pre><code>{% questionjs  width="30%", height="10%", color="#BB504B", gutter="true"%}
+<pre><code>{% questionjs  width="30%", color="#BB504B", gutter="true"%}
 </code></pre>
 
 <ul>
-<li>The <code>width</code> and <code>height</code> must be a percentage,</li>
+<li>The <code>width</code> must be a percentage,</li>
 <li>
 <code>color</code> can be any CSS valid value and</li>
 <li>
-<code>gutter</code> must be  <code>true</code> or <code>false</code> (whether to show or not the <code>gutter</code>).</li>
+<code>gutter</code> must be  "true" or "false" (whether to show or not the <code>gutter</code>).</li>
 <li>
 <code>editorHeight</code> must be on pixels ("200px").</li>
 <li>
-<code>editorAutoHeight</code> "true" or "false" and let the plugin or not calculate the editor height based on solution length.</li>
+<code>editorAutoHeight</code> "solution" or "editor" and let the plugin calculate the editor height based on solution or editor block length.</li>
+<li>
+<code>fontSize</code> its the size of the font on pixels "16px" or "16". (I recommend activate editorAutoHeight if you specify this parameter)</li>
 </ul>
 
 <p>You can specify the same parameters globally for all exercises with the book.json file.</p>
@@ -172,11 +174,11 @@ something
   "pluginsConfig":{
       "jazer": {
           "width": "80%",
-          "height": "20%",
           "color": "#BB504B",
           "gutter": "false"
           "support": ["https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js","https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"],
-          "editorHeight": "100px" //or editorAutoHeight: "true"
+          "editorHeight": "100px" //or editorAutoHeight: "solution",
+          "fontSize": "16px"
 
       }
   }
