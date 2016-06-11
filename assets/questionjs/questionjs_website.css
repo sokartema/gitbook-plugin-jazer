@@ -32,6 +32,7 @@ position: relative;.questionjs{
 
 .questionjs .buttons{
   margin: 10px;
+  margin-left: 15%;
 }
 
 .questionjs .buttons .button{

@@ -8,6 +8,7 @@ require(["gitbook"],function(gitbook){
       var correct = $question.find(".correct");
       var fail = $question.find(".fail");
       var editor = ace.edit($question.find(".editor").get(0));
+      var loadIcon =   $question.find('.load-icon');
       editor.setTheme("ace/theme/dreamweaver");
 
       if($question.find(".editor").attr('data-gutter') === "true"){
@@ -16,12 +17,14 @@ require(["gitbook"],function(gitbook){
         editor.renderer.setShowGutter(false);
       }
 
-
       // Submit: test code
 
       $question.find(".submit").click(function(e) {
 
           e.preventDefault();
+
+          correct.removeClass('show');
+          fail.removeClass('show');
 
           var textSolution = editor.getValue();
 
@@ -33,8 +36,10 @@ require(["gitbook"],function(gitbook){
 
           };
 
+          loadIcon.addClass('show');
+
                 $.ajax({
-                  url: 'http://127.0.0.1:8888/',
+                  url: 'http://10.6.128.62:8080/',
                   type: 'POST',
                   data: JSON.stringify(obj),
                   contentType: 'application/json',
@@ -42,12 +47,11 @@ require(["gitbook"],function(gitbook){
                   async: true,
                   success: function(msg) {
 
+                      loadIcon.removeClass('show');
+
                       var message = JSON.parse(msg);
 
-                      correct.removeClass('show');
-                      fail.removeClass('show');
-
-                      if(message.respuesta){
+                      if(message.respuesta === true || message.respuesta === "true"){
 
                         correct.addClass('show');
 
@@ -58,8 +62,22 @@ require(["gitbook"],function(gitbook){
 
                   },
                   error: function(xhr, status, errorThrown ) {
-                    
-                    alert(errorThrown + ": " + xhr.responseText);
+
+                    loadIcon.removeClass('show');
+
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(errorThrown);
+
+                    if(status === 'timeout'){
+
+                      alert('Error: Timeout');
+
+                    }else{
+
+                      alert(errorThrown + ": " + xhr.responseText);
+
+                    }
 
                   }
 
@@ -87,7 +105,5 @@ require(["gitbook"],function(gitbook){
   };
 
   gitbook.events.bind("page.change", init);
-
-
 
 });

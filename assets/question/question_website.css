@@ -30,6 +30,7 @@
 
 .question .buttons{
   margin: 10px;
+  margin-left: 15%;
 }
 
 .question .buttons .button{
@@ -126,4 +127,20 @@
   height: 100%;
   opacity: 1;
   transition: all 1s ease-in;
+}
+
+.question .load-icon{
+  font-size: 4em !important;
+  position: relative;
+  left: 40%;
+  bottom: 12%;
+  display:none;
+  margin-bottom: 30px;
+}
+
+
+.question .load-icon.show{
+
+  display:inherit;
+
 }
