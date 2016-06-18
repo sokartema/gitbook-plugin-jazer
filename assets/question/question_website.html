@@ -3,7 +3,7 @@
 	<div class="message">
 		<%= message %>
 	</div>
-	<div class ="editor" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" data-language="<%= codes.language %>"  <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>style="<% if (config.fontSize){ print("font-size: "+ config.fontSize +";"); }%><% if (config.editorHeight){ print("height: "+ config.editorHeight +";"); }%> <% if (config.editorAutoHeight === "solution" && !config.editorHeight){ print("height: "+ codes.solution.split(/\r\n|\r|\n/).length * config.factor +"px;"); }%><% if (config.editorAutoHeight === "editor" && !config.editorHeight){ print("height: "+ codes.editor.split(/\r\n|\r|\n/).length * config.factor +"px;"); }%>"><%= codes.editor %></div>
+	<div class ="editor" data-server="<%= config.server %>" data-solution="<%= codes.solution %>" data-validation="<%= codes.validation %>" data-language="<%= codes.language %>"  <% if (config.gutter !== undefined){ print("data-gutter='"+ config.gutter.trim() +"'"); }%>style="<% if (config.fontSize){ print("font-size: "+ config.fontSize +";"); }%><% if (config.editorHeight){ print("height: "+ config.editorHeight +";"); }%> <% if (config.editorAutoHeight === "solution" && !config.editorHeight){ print("height: "+ codes.solution.split(/\r\n|\r|\n/).length * config.factor +"px;"); }%><% if (config.editorAutoHeight === "editor" && !config.editorHeight){ print("height: "+ codes.editor.split(/\r\n|\r|\n/).length * config.factor +"px;"); }%>"><%= codes.editor %></div>
 	<div class= "correct"> <i class="fa fa-check-square-o fa-lg"></i> Correct </div>
 	<div class= "fail" > <i class="fa fa-times fa-lg"></i> Match Failed</div>
 	<i class="fa fa-spinner fa-pulse fa-5x fa-fw load-icon"></i>

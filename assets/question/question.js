@@ -9,6 +9,7 @@ require(["gitbook"],function(gitbook){
       var fail = $question.find(".fail");
       var editor = ace.edit($question.find(".editor").get(0));
       var loadIcon =   $question.find('.load-icon');
+      var server = $question.find(".editor").attr('data-server');
       editor.setTheme("ace/theme/dreamweaver");
 
       if($question.find(".editor").attr('data-gutter') === "true"){
@@ -39,7 +40,7 @@ require(["gitbook"],function(gitbook){
           loadIcon.addClass('show');
 
                 $.ajax({
-                  url: 'http://10.6.128.62:8080/',
+                  url: server || 'http://10.6.128.62:8080/',
                   type: 'POST',
                   data: JSON.stringify(obj),
                   contentType: 'application/json',
